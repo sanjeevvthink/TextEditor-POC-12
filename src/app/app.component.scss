@@ -24,20 +24,20 @@
 // .ql-toolbar.ql-snow + .ql-container.ql-snow {
 //   height: 240px !important;
 // }
-// .labelText{
-//   margin-top: 30px;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   width: 90%;
-//   font-size: 26px;
-// }
-// .saveField{
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     padding: 20px 340px;
-//   }
+.labelText{
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  font-size: 26px;
+}
+.saveField{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 340px;
+  }
 // .ql-snow .ql-picker.ql-size .ql-picker-item[data-value="14px"]::before {
 //   content: 'Normal';
 //   font-size: 14px !important;
@@ -72,60 +72,60 @@
 // #toolbar-container .ql-font span[data-label="Arial"]::before {
 //   font-family: "Arial";
 // }
-// .overlay {
-//     position: fixed;
-//     top: 0;
-//     bottom: 0;
-//     left: 0;
-//     right: 0;
-//     background: rgba(0, 0, 0, 0.7);
-//     transition: opacity 500ms;
-//   visibility: visible;
-//     opacity: 1;
-//   }
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+  visibility: visible;
+    opacity: 1;
+  }
   
   
-//   .popup {
-//     margin: 70px auto;
-//     padding: 20px;
-//     background: #fff;
-//     border-radius: 5px;
-//     width: 60%;
-//     position: relative;
-//     transition: all 5s ease-in-out;
-//     height: 40%;
-//   }
+  .popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 60%;
+    position: relative;
+    transition: all 5s ease-in-out;
+    height: 40%;
+  }
   
-//   .popup h2 {
-//     margin-top: 0;
-//     color: #333;
-//     font-family: Tahoma, Arial, sans-serif;
-//   }
-//   .popup .close {
-//     position: absolute;
-//     top: 20px;
-//     right: 30px;
-//     transition: all 200ms;
-//     font-size: 30px;
-//     font-weight: bold;
-//     text-decoration: none;
-//     color: #333;
-//   }
-//   .popup .close:hover {
-//     color: #06D85F;
-//     cursor: pointer;
-//   }
-//   .popup .content {
-//     max-height: 30%;
-//     overflow: auto;
-//   }
+  .popup h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+  }
+  .popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+  }
+  .popup .close:hover {
+    color: #06D85F;
+    cursor: pointer;
+  }
+  .popup .content {
+    max-height: 30%;
+    overflow: auto;
+  }
   
-//   @media screen and (max-width: 700px){
+  @media screen and (max-width: 700px){
     
-//     .popup{
-//       width: 70%;
-//     }
-//   }
+    .popup{
+      width: 70%;
+    }
+  }
 
 //   #toolbar-container .ql-font span[data-label="Sans Serif"]::before {
 //     font-family: "Sans Serif";

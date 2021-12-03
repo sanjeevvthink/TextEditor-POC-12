@@ -8,11 +8,6 @@ import { EditorChangeContent, EditorChangeSelection } from 'ngx-quill'
 import Quill from 'quill';
 
 
-
-// const font = Quill.import('formats/font')
-
-
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
