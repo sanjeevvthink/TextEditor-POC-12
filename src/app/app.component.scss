@@ -1,0 +1,327 @@
+.main-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+}
+.quill-container{
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+}
+.Manual-Write-Up-container{
+  margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+}
+// .ql-snow.ql-toolbar button, .ql-snow .ql-toolbar button {
+//   height: 30px;
+// }
+// .ql-toolbar.ql-snow + .ql-container.ql-snow {
+//   height: 240px !important;
+// }
+// .labelText{
+//   margin-top: 30px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   width: 90%;
+//   font-size: 26px;
+// }
+// .saveField{
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     padding: 20px 340px;
+//   }
+// .ql-snow .ql-picker.ql-size .ql-picker-item[data-value="14px"]::before {
+//   content: 'Normal';
+//   font-size: 14px !important;
+// }
+
+// .ql-snow .ql-picker.ql-size .ql-picker-item[data-value="16px"]::before {
+//   content: 'Large';
+//   font-size: 16px !important;
+// }
+
+// .ql-snow .ql-picker.ql-size .ql-picker-item[data-value="18px"]::before {
+//   content: 'Huge';
+//   font-size: 18px !important;
+// }
+// //dropdown
+// #toolbar-container .ql-font span[data-label="Sans Serif"]::before {
+//   font-family: "Sans Serif";
+// }
+
+// #toolbar-container .ql-font span[data-label="Inconsolata"]::before {
+//   font-family: "Inconsolata";
+// }
+
+// #toolbar-container .ql-font span[data-label="Roboto"]::before {
+//   font-family: "Roboto";
+// }
+
+// #toolbar-container .ql-font span[data-label="Mirza"]::before {
+//   font-family: "Mirza";
+// }
+
+// #toolbar-container .ql-font span[data-label="Arial"]::before {
+//   font-family: "Arial";
+// }
+// .overlay {
+//     position: fixed;
+//     top: 0;
+//     bottom: 0;
+//     left: 0;
+//     right: 0;
+//     background: rgba(0, 0, 0, 0.7);
+//     transition: opacity 500ms;
+//   visibility: visible;
+//     opacity: 1;
+//   }
+  
+  
+//   .popup {
+//     margin: 70px auto;
+//     padding: 20px;
+//     background: #fff;
+//     border-radius: 5px;
+//     width: 60%;
+//     position: relative;
+//     transition: all 5s ease-in-out;
+//     height: 40%;
+//   }
+  
+//   .popup h2 {
+//     margin-top: 0;
+//     color: #333;
+//     font-family: Tahoma, Arial, sans-serif;
+//   }
+//   .popup .close {
+//     position: absolute;
+//     top: 20px;
+//     right: 30px;
+//     transition: all 200ms;
+//     font-size: 30px;
+//     font-weight: bold;
+//     text-decoration: none;
+//     color: #333;
+//   }
+//   .popup .close:hover {
+//     color: #06D85F;
+//     cursor: pointer;
+//   }
+//   .popup .content {
+//     max-height: 30%;
+//     overflow: auto;
+//   }
+  
+//   @media screen and (max-width: 700px){
+    
+//     .popup{
+//       width: 70%;
+//     }
+//   }
+
+//   #toolbar-container .ql-font span[data-label="Sans Serif"]::before {
+//     font-family: "Sans Serif";
+//   }
+  
+//   #toolbar-container .ql-font span[data-label="Inconsolata"]::before {
+//     font-family: "Inconsolata";
+//   }
+  
+//   #toolbar-container .ql-font span[data-label="Roboto"]::before {
+//     font-family: "Roboto";
+//   }
+  
+//   #toolbar-container .ql-font span[data-label="Mirza"]::before {
+//     font-family: "Mirza";
+//   }
+  
+//   #toolbar-container .ql-font span[data-label="Arial"]::before {
+//     font-family: "Arial";
+//   }
+//   /* Set content font-families */
+  
+//   .ql-font-inconsolata {
+//     font-family: "Inconsolata";
+//   }
+  
+//   .ql-font-roboto {
+//     font-family: "Roboto";
+//   }
+  
+//   .ql-font-mirza {
+//     font-family: "Mirza";
+//   }
+  
+//   .ql-font-arial {
+//     font-family: "Arial";
+//   }
+
+
+//   #container {
+//     font-family: "Impact";
+//     font-size: 18px;
+//     height: 375px;
+//   }
+  
+//   #container #toolbar-container.ql-toolbar {
+//     padding: 10px;
+//   }
+  
+//   .ql-snow .ql-picker.ql-font, .ql-bubble .ql-picker.ql-font {
+//     width: 130px;
+//   }
+//   /* Set dropdown font-families */
+//   .ql-font span[data-value="impact"]::before, .ql-font span[data-label="Impact"]::before {
+//     font-family: "Impact";
+//   }
+//   .ql-font span[data-value="courier"]::before, .ql-font span[data-label="Courier"]::before {
+//     font-family: "Courier";
+//   }
+//   .ql-font span[data-value="comic"]::before, .ql-font span[data-label="Comic Sans MS"]::before {
+//     font-family: "Comic Sans MS";
+//   }
+  
+//   .ql-font-impact { font-family: 'Impact'; }
+//   .ql-font-courier { font-family: 'Courier'; }
+//   .ql-font-comic { font-family: 'Comic Sans MS'; }
+//   .ql-font-roboto {
+//     font-family: 'Roboto', sans-serif;
+//   }
+
+//   // * Set default font-family */
+//   #editor-container {
+//     font-family: "Aref Ruqaa";
+//     font-size: 18px;
+//     height: 375px;
+//   }
+  
+//   /* Set dropdown font-families */
+//   #toolbar-container .ql-font span[data-label="Aref Ruqaa"]::before {
+//     font-family: "Aref Ruqaa";
+//   }
+//   #toolbar-container .ql-font span[data-label="Mirza"]::before {
+//     font-family: "Mirza";
+//   }
+//   #toolbar-container .ql-font span[data-label="Roboto"]::before {
+//     font-family: "Roboto";
+//   }
+  
+//   /* Set content font-families */
+//   .ql-font-mirza {
+//     font-family: "Mirza";
+//   }
+//   .ql-font-roboto {
+//     font-family: "Roboto";
+//   }
+//   /* We do not set Aref Ruqaa since it is the default font */
+  
+  
+
+//   // last try
+//   #toolbar-container .ql-font span[data-label="Sans Serif"]::before {
+//     font-family: "Sans Serif";
+//   }
+  
+//   #toolbar-container .ql-font span[data-label="Inconsolata"]::before {
+//     font-family: "Inconsolata";
+//   }
+  
+//   #toolbar-container .ql-font span[data-label="Roboto"]::before {
+//     font-family: "Roboto";
+//   }
+  
+//   #toolbar-container .ql-font span[data-label="Mirza"]::before {
+//     font-family: "Mirza";
+//   }
+  
+//   #toolbar-container .ql-font span[data-label="Arial"]::before {
+//     font-family: "Arial";
+//   }
+
+//   .ql-font-inconsolata {
+//     font-family: "Inconsolata";
+//   }
+  
+//   .ql-font-roboto {
+//     font-family: "Roboto";
+//   }
+  
+//   .ql-font-mirza {
+//     font-family: "Mirza";
+//   }
+  
+//   .ql-font-arial {
+//     font-family: "Arial";
+//   }
+
+//   #quilljs-container {
+//     height: 200px;
+//   }
+
+
+
+//   quill-editor {
+//     display: block;
+//   }
+  
+//   .ql-editor:focus {
+//     border: 1px solid #80bdff !important;
+//     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25) !important;
+//   }
+  
+//   .ng-invalid {
+//     border: 1px dashed red;
+//   }
+  
+//   /* Set dropdown font-families */
+  
+//   [quill-editor-toolbar] .ql-font span[data-label="Aref Ruqaa"]::before {
+//     font-family: "Aref Ruqaa";
+//   }
+  
+//   [quill-editor-toolbar] .ql-font span[data-label="Mirza"]::before {
+//     font-family: "Mirza";
+//   }
+  
+//   [quill-editor-toolbar] .ql-font span[data-label="Roboto"]::before {
+//     font-family: "Roboto";
+//   }
+  
+//   /* Set content font-families */
+  
+//   .ql-font-mirza {
+//     font-family: "Mirza";
+//   }
+  
+//   .ql-font-aref {
+//     font-family: "Aref Ruqaa";
+//   }
+  
+//   .ql-font-roboto {
+//     font-family: "Roboto";
+//   }
+  
+//   pre {
+//     background-color: #fcfcfc;
+//     padding: 5px;
+//     border: 1px solid #b2b2b2;
+//     color: #363030;
+//   }
+
+
+//   .ql-snow .ql-picker.ql-font .ql-picker-label[data-value='arial']::before,
+// .ql-snow .ql-picker.ql-font .ql-picker-item[data-value='arial']::before
+// {
+//   content: 'Arial';
+//   font-family: 'Arial';
+// }
+
+

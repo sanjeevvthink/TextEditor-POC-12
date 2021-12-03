@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "f414ff66-1f43-45a8-8d09-f1843dde5be9"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -31,9 +34,14 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "./node_modules/quill/dist/quill.core.css",
+              "./node_modules/quill/dist/quill.bubble.css",
+              "./node_modules/quill/dist/quill.snow.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/quill/dist/quill.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -99,9 +107,16 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "./node_modules/quill/dist/quill.core.css",
+              "./node_modules/quill/dist/quill.bubble.css",
+              "./node_modules/quill/dist/quill.snow.css",
+              "./node_modules/quill-emoji/dist/quill-emoji.css",
+              "./node_modules/quill-mention/dist/quill.mention.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/quill/dist/quill.min.js"
+            ]
           }
         }
       }

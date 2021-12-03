@@ -1,1 +1,82 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~quill/dist/quill.core.css';
+@import '~quill/dist/quill.bubble.css';
+@import '~quill/dist/quill.snow.css';
+
+
+// #toolbar-container .ql-font span[data-label="Sans Serif"]::before {
+//     font-family: "Sans Serif";
+//   }
+  
+//   #toolbar-container .ql-font span[data-label="Inconsolata"]::before {
+//     font-family: "Inconsolata";
+//   }
+  
+//   #toolbar-container .ql-font span[data-label="Roboto"]::before {
+//     font-family: "Roboto";
+//   }
+  
+//   #toolbar-container .ql-font span[data-label="Mirza"]::before {
+//     font-family: "Mirza";
+//   }
+  
+//   #toolbar-container .ql-font span[data-label="Arial"]::before {
+//     font-family: "Arial";
+//   }
+
+//   #toolbar-container .ql-font span[data-label="Pacifico"]::before {
+//     font-family: "Pacifico";
+//   }
+//   /* Set content font-families */
+  
+//   .ql-font-inconsolata {
+//     font-family: "Inconsolata";
+//   }
+  
+//   .ql-font-roboto {
+//     font-family: "Roboto";
+//   }
+  
+//   .ql-font-mirza {
+//     font-family: "Mirza";
+//   }
+  
+//   .ql-font-arial {
+//     font-family: "Arial";
+//   }
+
+//   .ql-font-pacifico {
+//       font-family: "Pacifico";
+//   }
+
+//   #editor-container {
+//     font-family: "Aref Ruqaa";
+//     font-size: 18px;
+//     height: 375px;
+//   }
+  
+  /* Set dropdown font-families */
+  #toolbar-container .ql-font span[data-label="Aref Ruqaa"]::before {
+    font-family: "Aref Ruqaa";
+  }
+  #toolbar-container .ql-font span[data-label="Mirza"]::before {
+    font-family: "Mirza";
+  }
+  #toolbar-container .ql-font span[data-label="Roboto"]::before {
+    font-family: "Roboto";
+  }
+  #toolbar-container .ql-font span[data-label="Anton"]::before {
+    font-family: "Crimson+Pro";
+  }
+  
+  /* Set content font-families */
+  .ql-font-mirza {
+    font-family: "Mirza";
+  }
+  .ql-font-roboto {
+    font-family: "Roboto";
+  }
+  .ql-font-anton {
+    font-family: "Crimson+Pro";
+  }
+  
