@@ -3,57 +3,10 @@
 @import '~quill/dist/quill.bubble.css';
 @import '~quill/dist/quill.snow.css';
 
+@import 'swiper/scss';
+@import 'swiper/scss/navigation';
+@import 'swiper/scss/pagination';
 
-// #toolbar-container .ql-font span[data-label="Sans Serif"]::before {
-//     font-family: "Sans Serif";
-//   }
-  
-//   #toolbar-container .ql-font span[data-label="Inconsolata"]::before {
-//     font-family: "Inconsolata";
-//   }
-  
-//   #toolbar-container .ql-font span[data-label="Roboto"]::before {
-//     font-family: "Roboto";
-//   }
-  
-//   #toolbar-container .ql-font span[data-label="Mirza"]::before {
-//     font-family: "Mirza";
-//   }
-  
-//   #toolbar-container .ql-font span[data-label="Arial"]::before {
-//     font-family: "Arial";
-//   }
-
-//   #toolbar-container .ql-font span[data-label="Pacifico"]::before {
-//     font-family: "Pacifico";
-//   }
-//   /* Set content font-families */
-  
-//   .ql-font-inconsolata {
-//     font-family: "Inconsolata";
-//   }
-  
-//   .ql-font-roboto {
-//     font-family: "Roboto";
-//   }
-  
-//   .ql-font-mirza {
-//     font-family: "Mirza";
-//   }
-  
-//   .ql-font-arial {
-//     font-family: "Arial";
-//   }
-
-//   .ql-font-pacifico {
-//       font-family: "Pacifico";
-//   }
-
-//   #editor-container {
-//     font-family: "Aref Ruqaa";
-//     font-size: 18px;
-//     height: 375px;
-//   }
   
   /* Set dropdown font-families */
   #toolbar-container .ql-font span[data-label="Aref Ruqaa"]::before {
@@ -79,4 +32,36 @@
   .ql-font-anton {
     font-family: "Crimson+Pro";
   }
+  
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  // .swiper-slide {
+  //   text-align: center;
+  //   font-size: 18px;
+  //   background: #fff;
+  
+  //   /* Center slide text vertically */
+  //   display: -webkit-box;
+  //   display: -ms-flexbox;
+  //   display: -webkit-flex;
+  //   display: flex;
+  //   -webkit-box-pack: center;
+  //   -ms-flex-pack: center;
+  //   -webkit-justify-content: center;
+  //   justify-content: center;
+  //   -webkit-box-align: center;
+  //   -ms-flex-align: center;
+  //   -webkit-align-items: center;
+  //   align-items: center;
+  // }
+  
+  // .swiper-slide img {
+  //   display: block;
+  //   width: 100%;
+  //   height: 100%;
+  //   object-fit: cover;
+  // }
   

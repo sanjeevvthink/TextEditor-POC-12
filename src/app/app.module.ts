@@ -14,6 +14,7 @@ import { NextslideDirective } from './nextslide.directive';
 import { CardComponent } from './card/card.component';
 import { PrevSlideDirective } from './prev-slide.directive';
 import { CarosaldirDirective } from './carosaldir.directive';
+import { SwiperModule } from 'swiper/angular';
 // import { 
 // 	IgxCarouselModule,
 // 	IgxSliderModule
@@ -39,6 +40,7 @@ import { CarosaldirDirective } from './carosaldir.directive';
     FormsModule,
     ReactiveFormsModule,
     QuillModule.forRoot(),
+    SwiperModule
   ],
   providers: [],
   bootstrap: [AppComponent]

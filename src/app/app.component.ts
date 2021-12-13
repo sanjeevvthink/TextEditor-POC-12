@@ -14,8 +14,18 @@ import { ClientSecretCredential } from '@azure/identity'
 import { Client } from '@microsoft/microsoft-graph-client';
 import { TokenCredentialAuthenticationProvider, TokenCredentialAuthenticationProviderOptions } from "@microsoft/microsoft-graph-client/authProviders/azureTokenCredentials";
 import { course } from './card/models/course';
+// import SwiperCore from 'swiper';
+import { SwiperComponent } from "swiper/angular";
+import SwiperCore, { Pagination, Navigation, Swiper } from "swiper";
+import swiper from 'swiper';
+SwiperCore.use([Pagination, Navigation]);
+// import Swiper, { Navigation, Pagination } from 'swiper';
+// Swiper.use([Navigation, Pagination]);
 
 
+// const swiper = this.Swiper;
+// swiper.loopDestroy();
+// swiper.loopCreate();
 
 // Create an instance of the TokenCredential class that is imported
 const tokenCredential = new ClientSecretCredential("your_tenantId", "your_clientId", "your_clientSecret");
@@ -39,8 +49,24 @@ const tokenCredential = new ClientSecretCredential("your_tenantId", "your_client
   styleUrls: ['./app.component.scss']
 })
 
+// @ViewChild('swiper', { static: false }) swiper?: SwiperComponent;
+// slideNext(){
+//   this.swiper.swiperRef.slideNext(100);
+// }
+// slidePrev(){
+//   this.swiper.swiperRef.slidePrev(100);
+// }
+
 
 export class AppComponent implements OnInit, OnChanges {
+
+
+
+
+
+  virtualSlides = Array.from({ length: 600 }).map(
+    (el, index) => `Slide ${index + 1}`
+  );
   datValuedata: any
   linkedValue: any = []
   name = 'Angular ' + VERSION.major;
@@ -81,7 +107,7 @@ export class AppComponent implements OnInit, OnChanges {
     {
       key: 1,
       imageSrc: 'https://source.unsplash.com/800x600/?nature',
-      title: "Information Security: An path",
+      title: "Information Security: An path1",
       description: "This course introduces the fundamentals of information security, best practices for keeping information safe, and what to do in the event of a breach.",
       time: "~45 Mins",
       due: "Past due 23 Sep 2021",
@@ -91,21 +117,21 @@ export class AppComponent implements OnInit, OnChanges {
       expand: true,
       key: 2,
       imageSrc: 'https://source.unsplash.com/800x600/?car',
-      title: "Information Security: An gghdgvhcbjc",
+      title: "Information Security: An gghdgvhcbjc2",
       description: "This course introduces the fundamentals of information security, best practices for keeping information safe, and what to do in the event of a breach.",
       time: "~45 Mins",
       due: "Past due 23 Sep 2021",
       linked: [
         {
           imageSrc: 'https://source.unsplash.com/800x600/?moto',
-          title: "expand Course 1",
+          title: "expand Course 2.1",
           description: "This course introduces the fundamentals of information security, best practices for keeping information safe, and what to do in the event of a breach.",
           time: "~45 Mins",
           due: "Past due 23 Sep 2021"
         },
         {
           imageSrc: 'https://source.unsplash.com/800x600/?fantasy',
-          title: "expand Course 2",
+          title: "expand Course 2.2",
           description: "This course introduces the fundamentals of information security, best practices for keeping information safe, and what to do in the event of a breach.",
           time: "~45 Mins",
           due: "Past due 23 Sep 2021"
@@ -115,7 +141,7 @@ export class AppComponent implements OnInit, OnChanges {
     {
       key: 3,
       imageSrc: 'https://source.unsplash.com/800x600/?moto',
-      title: "Information gdtss: An yrrevd",
+      title: "Information gdtss: An yrrevd3",
       description: "This course introduces the fundamentals of information security, best practices for keeping information safe, and what to do in the event of a breach.",
       time: "~45 Mins",
       due: "Past due 23 Sep 2021"
@@ -125,14 +151,14 @@ export class AppComponent implements OnInit, OnChanges {
       expand: true,
       key: 4,
       imageSrc: 'https://source.unsplash.com/800x600/?fantasy',
-      title: "Information ddddd: An paccdsth",
+      title: "Information ddddd: An paccdsth4",
       description: "This course introduces the fundamentals of information security, best practices for keeping information safe, and what to do in the event of a breach.",
       time: "~45 Mins",
       due: "Past due 23 Sep 2021",
       linked: [
         {
           imageSrc: 'https://source.unsplash.com/800x600/?moto',
-          title: "expand Course 1",
+          title: "expand Course 4.1",
           description: "This course introduces the fundamentals of information security, best practices for keeping information safe, and what to do in the event of a breach.",
           time: "~45 Mins",
           due: "Past due 23 Sep 2021"
@@ -141,16 +167,16 @@ export class AppComponent implements OnInit, OnChanges {
     },
     {
       key: 5,
-      imageSrc: 'https://source.unsplash.com/800x600/?car',
-      title: "Information ewdxdcxcx: An dddddd",
+      imageSrc: 'https://source.unsplash.com/800x600/?car5',
+      title: "Information ewdxdcxcx: An dddddd5",
       description: "This course introduces the fundamentals of information security, best practices for keeping information safe, and what to do in the event of a breach.",
       time: "~45 Mins",
       due: "Past due 23 Sep 2021"
     },
     {
       key: 6,
-      imageSrc: 'https://source.unsplash.com/800x600/?moto',
-      title: "Information ewdxdcxcx: An dddddd",
+      imageSrc: 'https://source.unsplash.com/800x600/?moto6',
+      title: "Information ewdxdcxcx: An dddddd6",
       description: "This course introduces the fundamentals of information security, best practices for keeping information safe, and what to do in the event of a breach.",
       time: "~45 Mins",
       due: "Past due 23 Sep 2021"
@@ -307,9 +333,39 @@ export class AppComponent implements OnInit, OnChanges {
 
 
   Font = Quill.import('formats/font');
+  private _swiper: SwiperCore | undefined;
 
 
   constructor(private data: CRUDoperationService) {
+    
+
+      var swiper = new Swiper('.container-fluid', {
+        slidesPerView: 3,
+        spaceBetween: 0,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 2,
+            },
+            767: {
+                slidesPerView: 1,
+            },
+        },
+        pagination: {
+            el: '.campaign-pagination',
+            clickable: true,
+        },
+        loop: true,
+    });
+
+
+
+
+
+
     var BackgroundClass = Quill.import('attributors/class/background');
     var ColorClass = Quill.import('attributors/class/color');
     var SizeStyle = Quill.import('attributors/style/size');
@@ -317,7 +373,6 @@ export class AppComponent implements OnInit, OnChanges {
     Quill.register(ColorClass, true);
     Quill.register(SizeStyle, true);
 
-    // this.maincourse.push({this.course1})    
   }
 
   // onPreviousClick() {
@@ -336,6 +391,39 @@ export class AppComponent implements OnInit, OnChanges {
 
   }
   async ngOnInit() {
+
+
+    const swiper = await new Swiper('.swiper-container ', {
+      observer: true,
+      observeParents: true,
+      observeSlideChildren: true,
+      parallax: true,
+      direction: 'horizontal',
+      loop: true,
+      effect: 'coverflow',
+      grabCursor: true,
+      slidesPerView: 4,
+      initialSlide: 0,
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+      },
+      navigation: {
+        prevEl: ".prev",
+        nextEl: ".next"
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      
+    });
+    swiper.loopCreate();
+    swiper.loopDestroy()
+    this._swiper = swiper;
 
     // this.maincourse.push({this.course1})
     // set1
@@ -631,21 +719,31 @@ export class AppComponent implements OnInit, OnChanges {
 
   addItem(data: any) {
 
+  
     var indexData = this.courses.findIndex(dat => {
       return dat.key == data
     })
 
+    console.log(this.courses)
     this.courses.map(dat => {
       if (dat.key == data) {
         this.datValuedata = dat.linked
       }
     })
-    
-    this.courses.splice(indexData + 1, 0,...this.datValuedata)
+  //   this._swiper?.addSlide(data+1, `<app-card (isExpand)="addItem($event)" [courseModel]="datValuedata[0]" class="appCardContainer"
+  //   (isCollapse)=collapseItem($event)>
+  // </app-card>` );
+    this.courses.splice(indexData + 1, 0, ...this.datValuedata[0])
+
+    let editedCourse = []
+    editedCourse = this.courses.slice(0, indexData)
+    this.courses.push(...editedCourse)
+    this.courses.splice(0, indexData)
+    console.log(this.courses)
 
   }
 
-  collapseItem(data: any){
+  collapseItem(data: any) {
     var indexData = this.courses.findIndex(dat => {
       return dat.key == data
     })
@@ -653,27 +751,21 @@ export class AppComponent implements OnInit, OnChanges {
     this.courses.splice(indexData + 1, 2)
   }
 
+  onSwiper(swiper: any) {
+    console.log(swiper);
+  }
+  onSlideChange() {
+    console.log('slide change');
+  }
+
 }
 
 
+// function slidePrev() {
+//   throw new Error('Function not implemented.');
+// }
 
+// function slidePrev() {
+//   throw new Error('Function not implemented.');
+// }
 
-
-
-
-
-
-
-
-
-
-
-
-// const updateCourse = this.courses.forEach(dat => {
-//   if (dat.key == data) {
-//     this.key = dat.key
-//     var datasd = Object.keys(dat).length
-//     console.log(datasd);
-//   }
-//   console.log(this.key);
-// })
