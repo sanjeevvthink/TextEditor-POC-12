@@ -1,0 +1,8 @@
+<div>
+    <ul class="ul-list">
+        <li class="list" *ngFor="let item of list">
+            <ion-text class="bread-scrum" *ngIf="item.name">{{ item.name }}</ion-text>
+        </li>
+       <ion-text class="icon" (click)="openModalPopup($event)"><i class="fas fa-edit"><span >Edit</span></i></ion-text>
+    </ul>
+</div>

@@ -15,6 +15,15 @@ import { CardComponent } from './card/card.component';
 import { PrevSlideDirective } from './prev-slide.directive';
 import { CarosaldirDirective } from './carosaldir.directive';
 import { SwiperModule } from 'swiper/angular';
+import { CarouselComponent } from './carousel/carousel.component';
+import { AppModalPopupComponent } from './app-modal-popup/app-modal-popup.component';
+import { NotificationPopupComponent } from './notification-popup/notification-popup.component';
+import { AppDropdownComponent } from './app-dropdown/app-dropdown.component';
+import { MyqueueLabelComponent } from './myqueue-label/myqueue-label.component';
+import { AppCommonModalComponent } from './app-common-component/app-common-modal.component';
+import { LrmMyqueueComponent } from './my-queue-label/lrm-myqueue.component';
+import { ReviewPopupComponent } from './review-popup/review-popup.component';
+import {ViewModalPopupComponent} from './mandatory-training/view-modal-popup.component'
 // import { 
 // 	IgxCarouselModule,
 // 	IgxSliderModule
@@ -28,7 +37,16 @@ import { SwiperModule } from 'swiper/angular';
     NextslideDirective,
     CardComponent,
     PrevSlideDirective,
-    CarosaldirDirective
+    CarosaldirDirective,
+    CarouselComponent,
+    AppModalPopupComponent,
+    NotificationPopupComponent,
+    AppDropdownComponent,
+    MyqueueLabelComponent,
+    AppCommonModalComponent,
+    LrmMyqueueComponent,
+    ReviewPopupComponent,
+    ViewModalPopupComponent
   ],
   imports: [
     IvyCarouselModule,

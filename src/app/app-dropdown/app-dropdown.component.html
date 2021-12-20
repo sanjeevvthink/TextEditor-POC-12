@@ -1,0 +1,98 @@
+<div class="select-parent-container" [ngClass]="disabled ? 'isDisabled' : ''">
+  <div class="label-container" *ngIf="showAdaLabel" tabindex="0" [attr.aria-label]="label" role="text">
+    <ion-label aria-hidden="true" class="label-text text-font">{{ label }}</ion-label>
+  </div>
+  <div
+    (click)="uiToggleDropDown()"
+    tabindex="0"
+    (keyup.enter)="iToggleDropDown()"
+    [attr.aria-label]="setDisplayLabel"
+    class="select-container ripple"
+    role="list"
+  >
+    <ion-grid class="select-container-grid">
+      <ion-row class="ion-align-items-center">
+        <ion-col size="10">
+          <ion-label id="displayLabel" class="display-label text-font">{{ setDisplayLabel }}</ion-label>
+        </ion-col>
+        <ion-col size="2" class="image-col">
+          <ion-label class="drop-down-img-container">
+            <ion-spinner *ngIf="isLoading" name="crescent" class="loader"></ion-spinner>
+            <svg [ngClass]="showDropDown ? 'rotate-icon' : ''" role="img" viewBox="-8 0 80 42" *ngIf="!isLoading" class="collapse-dropdown">
+              <!-- <use xlink:href="/assets/icon/audit-sprite-icons.svg#collapse-dropdown"></use> -->
+            </svg>
+            <!-- <svg role="img" viewBox="-10 0 100 75" *ngIf="showDropDown" class="expand-dropdown">
+              <use xlink:href="/assets/icon/audit-sprite-icons.svg#expand-dropdown"></use>
+            </svg> -->
+          </ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div *ngIf="showDropDown" id="dropDownContainer" class="drop-down-container">
+    <ion-searchbar
+      *ngIf="searchable"
+      #search
+      debounce="1000"
+      (ionCancel)="onCancel()"
+      mode="md"
+      (ionChange)="onSearch($event)"
+      (ionClear)="onCancel()"
+      showCancelButton="never"
+      [placeholder]="'Search...'"
+      [value]="searchValue"
+    >
+    </ion-searchbar>
+    <div
+      (scroll)="loadData()"
+      class="drop-down-container"
+      [ngStyle]="{ 'max-height': listToShow ? '250px' : '0px', height: (listToShow?.length || 0) * 48 + 'px' }"
+      style="position: absolute; border-top: 0px; overflow: hidden; overflow-y: auto; position: -webkit-sticky"
+      #dropdownContainer
+    >
+      <ion-list id="list" tabindex="0" class="ion-no-padding" (focus)="getChildElements($event)" #dropdownList role="listbox">
+        <ion-item *ngFor="let item of listToShow; let i = index" lines="none" class="list-to-show-item">
+          <ion-grid tabindex="0" (keyup.enter)="onSelect(item, $event)" class="ion-no-padding" [id]="'dropdown_focus_' + i">
+            <ion-row class="ion-align-items-center" role="option" (click)="onSelect(item)">
+              <ion-col size="2.5" *ngIf="item.imgUrl" class="ion-hide-sm-down">
+                <ion-label class="drop-down-img-container">
+                  <svg role="img" viewBox="0 0  75 75" class="filter-icon">
+                    <use [attr.xlink:href]="item.imgUrl"></use>
+                  </svg>
+                </ion-label>
+              </ion-col>
+              <ion-col class="dropdown-text">
+                <ion-label
+                  *ngIf="!isTwoLabels"
+                  class="list-item-label text-font"
+                  [ngClass]="item.isSelected ? 'selected-label' : 'un-selected-label'"
+                >
+                  {{ item[this.displayBy] }}</ion-label
+                >
+                <ion-label
+                  *ngIf="isTwoLabels"
+                  class="list-item-label text-font"
+                  [ngClass]="item.isSelected ? 'selected-label' : 'un-selected-label'"
+                >
+                  {{ item[this.displayBy] }} - {{ item[this.secondDisplayName] }}</ion-label
+                >
+              </ion-col>
+
+              <ion-col size="2" *ngIf="!item.imgUrl" [ngClass]="item.isSelected ? 'selected-tick' : 'un-selected-tick'" class="image-col">
+                <ion-label *ngIf="showTick" class="drop-down-img-container">
+                  <svg role="img" viewBox="0 0  75 75" class="dropdown-tick">
+                    <!-- <use xlink:href="/assets/icon/audit-sprite-icons.svg#active-tick"></use> -->
+                  </svg>
+                </ion-label>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+        <ion-item lines="none" class="ion-padding-bottom" *ngIf="searchable && showLoader">
+          <ion-spinner tabindex="0" name="bubbles" color="primary" class="more-loader"></ion-spinner>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+</div>

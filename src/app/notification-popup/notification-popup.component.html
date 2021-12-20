@@ -1,0 +1,53 @@
+<div class="main-container">
+    <ion-grid >
+        <ion-row>
+            <ion-col size="12" class="col-label-main">
+                <ion-label class="label-text">This is test purpose. Console the data and debug when it requires the main container</ion-label>
+            </ion-col>
+        </ion-row>
+        <ion-row class="dropdown-main">
+            <ion-col size="12">
+                <app-dropdown 
+                [placeholder]="defaultPlaceHolder"
+                [label]="label"
+                displayBy="name"
+                [data]= "moduleValue"
+                (ngModelChange)="uiGetFieldValues($event)"
+                name = "data"
+                [(ngModel)]="changedData"
+                >
+                </app-dropdown>
+            </ion-col>
+        </ion-row>
+        <ion-row class="dropdown-main">
+            <ion-col size="12">
+                <app-dropdown 
+                [placeholder]="defaultPlaceHolder"
+                [label]="placeLabel"
+                displayBy="name"
+                [showTick]='true'
+                [data]= "courseValue"
+                [(ngModel)]="changedValue"
+                (ngModelChange)="uiGetPlaceValues($event)">
+                </app-dropdown>
+            </ion-col>
+        </ion-row>
+        <ion-row class="row-button-main">
+            <ion-col size="4" class="button-main-comp">
+                <button ion-button icon-only class="buttonMain_Comp" (click)="cancelFunc()">
+                    <ion-label class="labelMain">Cancel</ion-label>
+                </button>
+            </ion-col>
+            <ion-col size="4" class="button-main-comp" >
+                <button ion-button icon-only class="buttonMain_Comp" (click)="resetFunc()">
+                    <ion-label class="labelMain">Reset</ion-label>
+                </button>
+            </ion-col>
+            <ion-col size="4" class="button-main-comp">
+                <button ion-button icon-only class="buttonMain_Comp" (click)="saveFunc()">
+                    <ion-label class="labelMain">Save</ion-label>
+                </button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</div>

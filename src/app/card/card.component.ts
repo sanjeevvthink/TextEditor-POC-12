@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, Attribute } from '@angular/core';
 import { course } from './models/course';
 
 @Component({
@@ -11,6 +11,7 @@ export class CardComponent implements OnInit {
   @Output() isExpand = new EventEmitter<boolean>();
   @Output() isCollapse = new EventEmitter<boolean>();
   
+  
   myQueue: boolean = true
   expand: boolean = false
   
@@ -18,6 +19,8 @@ export class CardComponent implements OnInit {
    'https://source.unsplash.com/800x600/?nature',
   ]
   constructor() { 
+  //   @Attribute('is-primary') public isPrimary,
+  // @Attribute('is-secondary') public isSecondary,
   }
 
   ngOnInit(): void {

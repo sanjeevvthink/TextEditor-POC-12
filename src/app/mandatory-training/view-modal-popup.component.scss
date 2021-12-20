@@ -1,0 +1,362 @@
+ion-toolbar.modal-header {
+  --background: var(--app-primary-color);
+  --color: var(--app-secondary-color);
+}
+ion-content {
+  --offset-top: 0px !important;
+  --offset-bottom: 0px !important;
+}
+.header-title {
+  font-size: var(--app-heading1-font-size);
+}
+.footer-md::before {
+  background-image: none !important;
+}
+.web-camera-settings {
+  width: inherit;
+  display: block;
+}
+
+::ng-deep video {
+  vertical-align: baseline;
+  object-fit: cover;
+  width: 100%;
+}
+.upload-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.upload-section {
+  min-height: 100px;
+  overflow: auto;
+}
+.hidden-file {
+  visibility: hidden;
+  position: absolute;
+  overflow: hidden;
+  width: 0px;
+  height: 0px;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+.grey-card {
+  border-radius: 10px;
+  background-color: var(--app-quinary-color);
+  text-align: center;
+  margin-top: 10px;
+  line-height: 0px !important;
+  padding: 15px 0;
+}
+
+.mrg-top {
+  margin-top: 15px;
+}
+
+.upload {
+  font-size: var(--app-heading2-font-size);
+  line-height: 1;
+  color: var(--app-tertiary-color);
+}
+
+.browse-import {
+  font-size: var(--app-heading2-font-size);
+  line-height: 2;
+  color: var(--app-tertiary-color);
+}
+
+.browse {
+  color: var(--app-octal-color);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.max-file {
+  font-size: var(--app-heading2-font-size);
+  line-height: 1.2;
+  color: var(--app-tertiary-color);
+}
+.seg-texting {
+  text-transform: capitalize;
+  font-size: var(--app-heading2-font-size);
+  color: red;
+}
+.segment-button-checked{
+  border: red !important;
+
+}
+.seg-texting:active {
+  background: blue;
+  color: red;
+  font-family: var(--app-semi-bold-font) !important;
+  font-weight: 400;
+}
+.seg-texting:hover {
+  background: rgba(var(--app-primary-color-rgb), 0.1);
+  color: var(--app-primary-color) !important;
+}
+
+.close-btn {
+  width: 22px;
+  height: 22px;
+  float: right;
+  color: var(--app-secondary-color);
+}
+
+.upload-texting {
+  // font-size: var(--app-heading2-font-size);
+  padding: 0px 15px;
+  color: var(--app-secondary-color);
+  font-family: var(--app-medium-font);
+  text-align: left;
+}
+
+.bordering {
+  background-color: var(--app-primary-color);
+}
+.image-capture {
+  height: 375px !important;
+  object-fit: cover;
+}
+.img-jpg {
+  font-size: var(--app-heading3-font-size);
+  line-height: 1.2;
+  color: var(--app-tertiary-color);
+}
+.upload-imagetext {
+  padding-top: 5px;
+}
+.uploading-MB {
+  opacity: 0.7;
+  font-size: var(--app-heading3-font-size);
+  line-height: 1.2;
+  color: var(--app-tertiary-color);
+}
+.upload-text-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.close-clr {
+  color: var(--app-primary-color);
+  cursor: pointer;
+}
+
+.bg-list {
+  background: var(--app-secondary-color);
+  border-bottom: solid 0.5px var(--app-quinary-color);
+}
+.bg-list:last-child {
+  border-bottom: none;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  position: relative;
+  bottom: 10px;
+  right: 15px;
+}
+
+.btn-close {
+  background: unset;
+  float: right;
+  outline: unset;
+}
+
+.upload-svg {
+  width: 64px;
+  height: 64px;
+}
+
+.uploaded-svg {
+  width: 50px;
+  height: 40px;
+}
+ion-segment {
+  height: 48px;
+  background: var(--app-secondary-color);
+}
+
+// ::part(indicator) {
+//   // height: 3px;
+//   // inset: 45px 0px;
+//   --indicator-color: darkblue;
+//   //  width: 100%;
+//   //  --background: var(--app-quinary-color);
+//   //  border-bottom: 1px solid var(--app-primary-color);
+// }
+.card-bg {
+  background-color: var(--app-secondary-color);
+  left: 0;
+  position: absolute;
+  bottom: 0;
+}
+.footer-height{
+  position: absolute;
+  height: 75px;
+  width: 100%;
+  bottom: 0;
+}
+
+.button-container{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.row-alignment{
+  padding: 0px;
+  padding-top: 5px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.text-font{
+    color: lightslategray;
+    font-size: 14px;
+    text-align: center;
+    display: flex;
+}
+
+.column-adjust{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.set-thumbnail{
+  display: flex;
+  align-items: center;
+}
+
+.hr-line{
+  width: 500px;
+  border-width: 1px;
+  color: gray;
+  height: 0px;
+  display: flex;
+  align-items: center;
+}
+
+.text-font-career{
+    color: lightslategray;
+    font-size: 14px;
+}
+
+.text-font-balck{
+  color: black;
+  font-size: 14px;
+}
+
+
+ion-toggle[aria-checked="false"]{
+  position: relative;
+  width: 70px;
+  height: 30px;
+ &::before {
+   position: absolute;
+   content: "OFF";
+   font-size: 16px;
+   line-height: 31px;
+   left: 35px;
+   float: right;
+ }
+ &::after {
+   position: absolute;
+   content: "";
+ }
+}
+ion-toggle[aria-checked="true"]{
+ position: relative;
+ width: 70px;
+ height: 30px;
+ &::before {
+   position: absolute;
+   content: "";
+ }
+&::after {
+  position: absolute;
+  content: "ON";
+  font-size: 16px;
+  line-height: 31px;
+  float: left;
+  top: 10px;
+  left: 15px;
+  color: #fff;
+}
+}
+
+ion-col{
+  ion-input{
+    border: solid 1px gray;
+    color: black;
+    font-size: 14px;
+    padding-left: 5px;
+    background-color: lightgrey;
+    padding: 5px !important;
+  }
+}
+
+// &::part(indicator) {
+//   height: 100%;
+//   border-width: 3px;
+//   border-color: red;
+//   border-style: inset;
+// }
+// &::part(indicator-background) {
+//   background: transparent;
+// }
+
+// ion-segment-button {
+//   --background-checked: red;
+//   --color-checked: blue;
+// }
+// ion-segment-button{
+//   --indicator-box-shadow: transparent!important;
+//   border-radius: 2.5rem !important;
+//   padding: 0.7rem;
+//   margin: 0;
+//   --background:white;
+//   --color:#2d2e87;
+//   --background-checked: linear-gradient(to right, #2d2e87, #0083CB)!important;
+//   --color-checked: white;
+//   --indicator-color : transparent!important; /* this solution */
+//   }
+
+ion-checkbox {
+ /* increasing overall width not the check icon size */
+  --size:15px;
+}
+
+.segment-data{
+  padding-left: 10px;
+}
+
+.apply-opcity{
+  opacity: 0.5;
+}
+
+.input-box{
+  height: 35px;
+}
+::part(content) {
+    /* Styles to apply to the foo part */
+    height: 100%;
+}
+
+::part(indicator) {
+  height: 45px;
+  width: 150px;
+  --indicator-color: red;
+  // background: linear-gradient(to right, 162ec5,0061a4,00a56c);
+  display: flex;
+  margin: auto;
+}
+
+// ::part(indicator-background) {
+//   height: 3px;
+// }

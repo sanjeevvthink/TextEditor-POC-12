@@ -1,7 +1,8 @@
 .item{
     display: inline-block;
-    width: 300px;
+    // width: 500px;
     height: 600px;
+    width: 430px;
   }
 
   .slide {
@@ -17,9 +18,6 @@
     padding-left: 10px;
   }
 
-  // agm-map{
-//     height: 500px;
-// }
 .container{
     height: 100%;
     width: 100%;
@@ -57,17 +55,24 @@
 .course-description{
     font-size: 16x;
     overflow-wrap: break-word;
+    color: dimgray;
 }
 
 .img{
     background-size: 100% 100%;
-    width:100%;
-    height: 300px;
+    width: 380px;
+    // width:100%;
+    height: 210px;
     object-fit: cover;
 }
-
+.dueText{
+    color: red;
+}
+.dueNormalText{
+    color: dimgrey;
+}
 .card{
-    width: 100%;
+    // width: 100%;
     height: auto;
     background: none;
     box-shadow:none !important;
@@ -77,6 +82,14 @@
 .buttonMain_Comp{
     width: 145px;
     height: 30px;
+    background-color: var(--ion-text-color);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #00A59C;
+    border: none;
+    color: white;
 }
 .container {
     position: relative;
@@ -85,7 +98,7 @@
   .container .btn {
     position: absolute;
     top: 20px;
-    left: 75%;
+    left: 80%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     color: white;
@@ -95,4 +108,60 @@
     cursor: pointer;
     border-radius: 5px;
   }
-  
+  .container .label {
+    position: absolute;
+    top: 20px;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    color: white;
+    background-color: darkgoldenrod;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    border-radius: 2px;
+    left: 54px;
+    padding: 2px 5px 2px 5px;
+  }
+
+  .grid-container{
+      width: 390px;
+  }
+  :host(.button-solid) {
+    --background: var(--ion-color-primary, #00A59C !important);
+  }
+  .clock-container{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+  }
+  .calender-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.img-block{
+    padding: 2px;
+    padding-right: 5px;
+}
+.labelMain{
+    margin-left: 7px;
+    color: dimgrey;
+}
+.buttonMain_Comp1{
+    width: 90%;
+    height: 30px;
+    background-color: var(--ion-text-color);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color:white;
+    border: none;
+    color: black;
+    box-shadow: 1px 2px 4px 1px rgba(0, 0, 0, 0.4);
+}
+.row-button-main{
+    padding-top: 10px;
+}

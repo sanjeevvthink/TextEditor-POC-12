@@ -467,43 +467,62 @@
 @import 'swiper/scss/navigation';
 @import 'swiper/scss/pagination';
 
-.swiper-container {
-  width: 100%;
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
+// .swiper-container {
+//   width: 100%;
+//   padding-top: 50px;
+//   padding-bottom: 50px;
+// }
 
-.swiper-slide {
-  background-position: center;
-  background-size: cover;
-  // width: 300px;
-  // height: 300px;
-  font-size: 18px;
-            height: auto;
-            width: auto;
-            -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-            padding: 30px;
+// .swiper-slide {
+//   background-position: center;
+//   background-size: cover;
+//   // width: 300px;
+//   // height: 300px;
+//   font-size: 18px;
+//   height: auto;
+//   width: auto;
+//   -webkit-box-sizing: border-box;
+//   box-sizing: border-box;
+//   padding: 30px;
+// }
+// .prev {
+//   position: absolute;
+//   top: 0;
+//   bottom: 0;
+//   left: 20px;
+//   width: 30px;
+//   height: 30px;
+//   margin: auto;
+//   background-color: black;
+//   z-index: 4;
+// }
+// .next {
+//   position: absolute;
+//   top: 0;
+//   bottom: 0;
+//   right: 20px;
+//   width: 30px;
+//   height: 30px;
+//   margin: auto;
+//   background-color: black;
+//   z-index: 4;
+// }
+
+.testCard{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.prev {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 20px;
-  width: 30px;
-  height: 30px;
-  margin: auto;
-  background-color: black;
-  z-index: 4;
+.main-carousel-container{
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
 }
-.next {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 20px;
-  width: 30px;
-  height: 30px;
-  margin: auto;
-  background-color: black;
-  z-index: 4;
+.popup-modal-css {
+  height: 100%;
+  width: 100%;
+  color: var(--app-secondary-color);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

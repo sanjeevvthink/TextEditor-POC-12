@@ -1,0 +1,49 @@
+<div>
+    <div>
+        <ion-text>Select upto 4 data points that your employees can sort by.</ion-text><br>
+        <ion-text>TIP:To Select a new data point, please uncheck any selected</ion-text>
+    </div>
+    <!-- <ul>
+        <li>Disclosures</li>
+        <li>Pending Completion</li>
+        <li>Information Requested</li>
+        <li>Submitted</li>
+        <li>Total Mandatory</li>
+        <li>Not Completed</li>
+        <li>Pending Review</li>
+    </ul> -->
+    <ion-card class="content">
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <ul *ngFor="let dat of data; let i = index">
+                        <li class="list">
+                            <input type="checkbox" id="remember" 
+                            [disabled]="!dat.value && checkedNumber === limitNumber" 
+                            (change)="onChange($event,dat.id)" 
+                            [checked]="dat.isChecked"
+                            [(ngModel)]="dat.value">
+                            <ion-text class="bread-scrum">{{ dat.name }}</ion-text>
+                        </li>
+                    </ul>
+                    
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-card>
+   
+</div>
+
+<div class="footer-height">
+    <ion-footer class="button-container">
+        <ion-grid>
+            <ion-row class="row-alignment">
+                <ion-col size="1.5"></ion-col>
+                <ion-col size="3" (click)="cancelFunc()">Cancel</ion-col>
+                <ion-col size="3" (click)="resetFunc()">Reset</ion-col>
+                <ion-col size="3" (click)="saveFunc()">Save</ion-col>
+                <ion-col size="1.5"></ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-footer>
+</div>

@@ -23,6 +23,7 @@
     "@kolkov/angular-editor": "^1.2.0",
     "@microsoft/microsoft-graph-client": "^3.0.1",
     "@microsoft/microsoft-graph-types": "^2.10.0",
+    "@ngx-translate/core": "^14.0.0",
     "@types/gapi": "0.0.41",
     "@types/gapi.auth2": "0.0.55",
     "@types/gapi.client.calendar": "^3.0.10",

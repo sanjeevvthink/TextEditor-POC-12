@@ -22,6 +22,7 @@
 
 
 export interface course {
+    progress: string
     collapse: boolean
     expand: boolean
     key: number

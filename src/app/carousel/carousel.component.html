@@ -1,0 +1,26 @@
+<div class="main-swiper">
+  <div class=" swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" *ngFor="let course of courses;">
+        <div class="slider-main">
+          <app-card (isExpand)="addItem($event)" [courseModel]="course" class="appCardContainer"
+            (isCollapse)=collapseItem($event)>
+          </app-card>
+        </div>
+      </div>
+      <!-- Swiper - Add Pagination -->
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <ion-img  [src]="'assets/leftarrow.svg'" class="prev"></ion-img>
+  <ion-img  [src]="'assets/rightarrow.svg'" class="next"></ion-img>
+  <!-- <div class="control prev">
+    <span class="arrow left"></span>
+  </div> -->
+  <!-- <div class="control next">
+    <span class="arrow right"></span>
+  </div> -->
+</div>
+
+<!-- [ngClass]="multipleData ? 'slide1': 'slide2'" -->

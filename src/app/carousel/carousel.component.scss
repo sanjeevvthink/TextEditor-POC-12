@@ -1,0 +1,142 @@
+@import 'swiper/scss';
+@import 'swiper/scss/navigation';
+@import 'swiper/scss/pagination';
+
+.swiper{
+  width: 90% !important;
+}
+.main-swiper{
+  position: relative;
+  padding: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.swiper-container {
+  width: 86%;
+  height: 100%;
+  position: relative;
+    overflow: hidden;
+  // padding-top: 50px;
+  // padding-bottom: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 405px !important;
+  // height: 300px;
+  font-size: 18px;
+  height: auto;
+  width: auto;
+ -webkit-box-sizing: border-box;
+ box-sizing: border-box;
+//  padding: 30px;
+}
+.prev {
+  position: absolute;
+  top: 0;
+  // top: 50%;
+  bottom: 0;
+  left: 40px;
+  width: 50px;
+  height: 70px;
+  margin: auto;
+  z-index: 4;
+}
+.next {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 40px;
+  width: 50px;
+  height: 70px;
+  margin: auto;
+  z-index: 4;
+}
+.control {
+  // top: 32px;
+  border: none;
+  background-color: transparent;
+  outline: 0; // remove blue outline border, but make sure they are still focussable for accessibility
+  position: absolute;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.5em;
+  color: white;
+  font-weight: bold;
+  font-size: 3em;
+  user-select: none;
+  height: 100%;
+  opacity: 80%;
+  // opacity effect on hover
+  transition: opacity 150ms cubic-bezier(0.25, 0.46, 0.45, 0.84);
+
+  &:hover, &:focus {
+    opacity: 1;
+  }
+
+  /* Position the buttons */
+  &.next {
+    right: 2%;
+  }
+  &.prev {
+    left: 2%;
+  }
+}
+
+/* style the arrows */
+.arrow {
+  display: block;
+  border-left: 0.1em solid white;
+  border-bottom: 0.1em solid white;
+  width: 0.5em;
+  height: 0.5em;
+  background-color: black;
+
+  &.left {
+    transform: rotate(45deg);
+  }
+  &.right {
+    transform: rotate(225deg);
+  }
+}
+.slide1{
+  width: 87%;
+  height: 100%;
+  position: relative;
+    overflow: hidden;
+}
+.slide2{
+  width: 87%;
+  height: 100%;
+  position: relative;
+    overflow: hidden;
+}
+.swiper-wrapper{
+  padding-left: 1px;
+  // width: 87% !important;
+}
+
+// .swiper-wrapper .swiper-slide {
+//   background-color: #eee;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+// .swiper-button-prev,
+// .swiper-button-next {
+//   display: none;
+// }
+
+.swiper-button-disabled{
+  display:none;   
+}
+.disabled_swiper_button {
+  opacity: 0;
+  cursor: auto;
+  pointer-events: none;
+}

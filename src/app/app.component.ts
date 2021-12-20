@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, VERSION } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, VERSION , NgZone} from '@angular/core';
 import { appInitialize } from '@ionic/angular/app-initialize';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
 import { QuillModule } from 'ngx-quill'
@@ -18,6 +18,10 @@ import { course } from './card/models/course';
 import { SwiperComponent } from "swiper/angular";
 import SwiperCore, { Pagination, Navigation, Swiper } from "swiper";
 import swiper from 'swiper';
+import { ModalService } from './modal.service';
+import { NotificationPopupComponent } from './notification-popup/notification-popup.component';
+import { ReviewPopupComponent } from './review-popup/review-popup.component';
+import { ViewModalPopupComponent } from './mandatory-training/view-modal-popup.component';
 SwiperCore.use([Pagination, Navigation]);
 // import Swiper, { Navigation, Pagination } from 'swiper';
 // Swiper.use([Navigation, Pagination]);
@@ -49,24 +53,59 @@ const tokenCredential = new ClientSecretCredential("your_tenantId", "your_client
   styleUrls: ['./app.component.scss']
 })
 
-// @ViewChild('swiper', { static: false }) swiper?: SwiperComponent;
-// slideNext(){
-//   this.swiper.swiperRef.slideNext(100);
-// }
-// slidePrev(){
-//   this.swiper.swiperRef.slidePrev(100);
-// }
 
 
 export class AppComponent implements OnInit, OnChanges {
-
-
-
-
-
-  virtualSlides = Array.from({ length: 600 }).map(
-    (el, index) => `Slide ${index + 1}`
-  );
+  slide1 = "slide1"
+  slide2 = "slide2"
+  course1 = [
+    {
+      progress: "InProgress",
+      collapse: false,
+      expand: true,
+      key: 2,
+      imageSrc: 'https://source.unsplash.com/800x600/?car',
+      title: "Information Security: An gghdgvhcbjc2",
+      description: "This course introduces the <mark> fundamentals </mark> of information security, best practices for keeping information safe, and what to do in the event of a breach.",
+      time: "~45 Mins",
+      due: "Past due 23 Sep 2021",
+      linked: [
+        {
+          imageSrc: 'https://source.unsplash.com/800x600/?moto',
+          title: "expand Course 2.1",
+          description: "This course introduces the fundamentals of information security, best practices for keeping information safe, and what to do in the event of a breach.",
+          time: "~45 Mins",
+          due: "Past due 23 Sep 2021"
+        },
+        {
+          imageSrc: 'https://source.unsplash.com/800x600/?fantasy',
+          title: "expand Course 2.2",
+          description: "This course introduces the fundamentals of information security, best practices for keeping information safe, and what to do in the event of a breach.",
+          time: "~45 Mins",
+          due: "Past due 23 Sep 2021"
+        },
+      ]
+    },
+    {
+      progress: "InProgress",
+      key: 5,
+      imageSrc: 'https://source.unsplash.com/800x600/?car5',
+      title: "Information ewdxdcxcx: An dddddd5",
+      description: "This course introduces the fundamentals of information security, best practices for keeping information safe, and what to do in the event of a breach.",
+      time: "~45 Mins",
+      due: "Past due 23 Sep 2021",
+    },
+    {
+      progress: "InProgress",
+      key: 6,
+      imageSrc: 'https://source.unsplash.com/800x600/?moto6',
+      title: "Information ewdxdcxcx: An dddddd6",
+      description: "This course introduces the fundamentals of information security, best practices for keeping information safe, and what to do in the event of a breach.",
+      time: "~45 Mins",
+      due: "Past due 23 Sep 2021"
+    },
+    
+  ]
   datValuedata: any
   linkedValue: any = []
   name = 'Angular ' + VERSION.major;
@@ -108,11 +147,13 @@ export class AppComponent implements OnInit, OnChanges {
       key: 1,
       imageSrc: 'https://source.unsplash.com/800x600/?nature',
       title: "Information Security: An path1",
-      description: "This course introduces the fundamentals of information security, best practices for keeping information safe, and what to do in the event of a breach.",
+      description: "This course introduces the  <mark> Muthu </mark>  of information security, best practices for keeping information safe, and what to do in the event of a breach.",
       time: "~45 Mins",
       due: "Past due 23 Sep 2021",
+      progress: "InProgress"
     },
     {
+      progress: "InProgress",
       collapse: false,
       expand: true,
       key: 2,
@@ -147,6 +188,7 @@ export class AppComponent implements OnInit, OnChanges {
       due: "Past due 23 Sep 2021"
     },
     {
+      progress: "InProgress",
       collapse: false,
       expand: true,
       key: 4,
@@ -171,7 +213,7 @@ export class AppComponent implements OnInit, OnChanges {
       title: "Information ewdxdcxcx: An dddddd5",
       description: "This course introduces the fundamentals of information security, best practices for keeping information safe, and what to do in the event of a breach.",
       time: "~45 Mins",
-      due: "Past due 23 Sep 2021"
+      due: "Past due 23 Sep 2021",
     },
     {
       key: 6,
@@ -181,27 +223,6 @@ export class AppComponent implements OnInit, OnChanges {
       time: "~45 Mins",
       due: "Past due 23 Sep 2021"
     },
-    // {
-    //   imageSrc : 'https://source.unsplash.com/800x600/?fantasy',
-    //   title: "Information ewdxdcxcx: An dddddd",
-    //   description : "This course introduces the fundamentals of information security, best practices for keeping information safe, and what to do in the event of a breach.",
-    //   time : "~45 Mins",
-    //   due : "Past due 23 Sep 2021"
-    // },
-    // {
-    //   imageSrc : 'https://source.unsplash.com/800x600/?fantasy',
-    //   title: "Information ddddd: An paccdsth",
-    //   description : "This course introduces the fundamentals of information security, best practices for keeping information safe, and what to do in the event of a breach.",
-    //   time : "~45 Mins",
-    //   due : "Past due 23 Sep 2021"
-    // },
-    // {
-    //   imageSrc : 'https://source.unsplash.com/800x600/?car',
-    //   title: "Information ewdxdcxcx: An dddddd",
-    //   description : "This course introduces the fundamentals of information security, best practices for keeping information safe, and what to do in the event of a breach.",
-    //   time : "~45 Mins",
-    //   due : "Past due 23 Sep 2021"
-    // }
 
   ]
 
@@ -336,30 +357,30 @@ export class AppComponent implements OnInit, OnChanges {
   private _swiper: SwiperCore | undefined;
 
 
-  constructor(private data: CRUDoperationService) {
+  constructor(private data: CRUDoperationService, private modalService: ModalService) {
     
 
-      var swiper = new Swiper('.container-fluid', {
-        slidesPerView: 3,
-        spaceBetween: 0,
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
-        },
-        breakpoints: {
-            768: {
-                slidesPerView: 2,
-            },
-            767: {
-                slidesPerView: 1,
-            },
-        },
-        pagination: {
-            el: '.campaign-pagination',
-            clickable: true,
-        },
-        loop: true,
-    });
+    //   var swiper = new Swiper('.container-fluid', {
+    //     slidesPerView: 3,
+    //     spaceBetween: 0,
+    //     autoplay: {
+    //         delay: 5000,
+    //         disableOnInteraction: false,
+    //     },
+    //     breakpoints: {
+    //         768: {
+    //             slidesPerView: 2,
+    //         },
+    //         767: {
+    //             slidesPerView: 1,
+    //         },
+    //     },
+    //     pagination: {
+    //         el: '.campaign-pagination',
+    //         clickable: true,
+    //     },
+    //     loop: true,
+    // });
 
 
 
@@ -393,37 +414,37 @@ export class AppComponent implements OnInit, OnChanges {
   async ngOnInit() {
 
 
-    const swiper = await new Swiper('.swiper-container ', {
-      observer: true,
-      observeParents: true,
-      observeSlideChildren: true,
-      parallax: true,
-      direction: 'horizontal',
-      loop: true,
-      effect: 'coverflow',
-      grabCursor: true,
-      slidesPerView: 4,
-      initialSlide: 0,
-      coverflowEffect: {
-        rotate: 50,
-        stretch: 0,
-        depth: 100,
-        modifier: 1,
-        slideShadows: true,
-      },
-      navigation: {
-        prevEl: ".prev",
-        nextEl: ".next"
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
+    // const swiper = await new Swiper('.swiper-container ', {
+    //   observer: true,
+    //   observeParents: true,
+    //   observeSlideChildren: true,
+    //   parallax: true,
+    //   direction: 'horizontal',
+    //   loop: true,
+    //   effect: 'coverflow',
+    //   grabCursor: true,
+    //   slidesPerView: 4,
+    //   initialSlide: 0,
+    //   coverflowEffect: {
+    //     rotate: 50,
+    //     stretch: 0,
+    //     depth: 100,
+    //     modifier: 1,
+    //     slideShadows: true,
+    //   },
+    //   navigation: {
+    //     prevEl: ".prev",
+    //     nextEl: ".next"
+    //   },
+    //   pagination: {
+    //     el: '.swiper-pagination',
+    //     clickable: true,
+    //   },
       
-    });
-    swiper.loopCreate();
-    swiper.loopDestroy()
-    this._swiper = swiper;
+    // });
+    // swiper.loopCreate();
+    // swiper.loopDestroy()
+    // this._swiper = swiper;
 
     // this.maincourse.push({this.course1})
     // set1
@@ -520,7 +541,7 @@ export class AppComponent implements OnInit, OnChanges {
   createEvent() {
     // this.data.createEvent()
     // this.authenticate()
-    this.initClient()
+    // this.initClient()
   }
   authenticate() {
     //   window.onLoadCallback = function(){
@@ -528,47 +549,47 @@ export class AppComponent implements OnInit, OnChanges {
     //         client_id: "MY_ID_HERE.apps.googleusercontent.com"
     //     });
     // }
-    var authenticate = gapi.auth2.getAuthInstance()
+    // var authenticate = gapi.auth2.getAuthInstance()
     // .signIn({ scope: "https://www.googleapis.com/auth/calendar https://www.googleapis.com/auth/calendar.events" })
     // .then(function () { console.log("Sign-in successful"); },
     //   function (err) { console.error("Error signing in", err); });
-    console.log(authenticate);
+    // console.log(authenticate);
 
   }
 
 
-  initClient() {
-    var GoogleAuth; // Google Auth object.
-    gapi.client.init({
-      'apiKey': 'AIzaSyCvdcM66qxdlRIAKGhB1VotyUW9qKzMIBU',
-      'clientId': '746746677237-2pgct7kieo80i18igrgsk1ddmka1b646.apps.googleusercontent.com',
-      'scope': "https://www.googleapis.com/auth/calendar ",
-      // 'discoveryDocs': ['https://www.googleapis.com/discovery/v1/apis/drive/v3/rest']
-    }).then(() => {
-      GoogleAuth = gapi.auth2.getAuthInstance()
-        .signIn({ scope: "https://www.googleapis.com/auth/calendar https://www.googleapis.com/auth/calendar.events" })
-        .then(() => {
-          console.log("Sign-in successful", this.loadCalendarApi());
-        },
-          function (err) { console.error("Error signing in", err); })
-      console.log(GoogleAuth)
-      // Listen for sign-in state changes.
-      // GoogleAuth.isSignedIn.listen(updateSigninStatus);
-    });
+  // initClient() {
+  //   var GoogleAuth; // Google Auth object.
+  //   gapi.client.init({
+  //     'apiKey': 'AIzaSyCvdcM66qxdlRIAKGhB1VotyUW9qKzMIBU',
+  //     'clientId': '746746677237-2pgct7kieo80i18igrgsk1ddmka1b646.apps.googleusercontent.com',
+  //     'scope': "https://www.googleapis.com/auth/calendar ",
+  //     // 'discoveryDocs': ['https://www.googleapis.com/discovery/v1/apis/drive/v3/rest']
+  //   }).then(() => {
+  //     GoogleAuth = gapi.auth2.getAuthInstance()
+  //       .signIn({ scope: "https://www.googleapis.com/auth/calendar https://www.googleapis.com/auth/calendar.events" })
+  //       .then(() => {
+  //         console.log("Sign-in successful", this.loadCalendarApi());
+  //       },
+  //         function (err: any) { console.error("Error signing in", err); })
+  //     console.log(GoogleAuth)
+  //     // Listen for sign-in state changes.
+  //     // GoogleAuth.isSignedIn.listen(updateSigninStatus);
+  //   });
 
-  }
+  // }
   /** Not in use ...*/
-  loadClient() {
-    gapi.client.setApiKey("AIzaSyCvdcM66qxdlRIAKGhB1VotyUW9qKzMIBU");
-    return gapi.client.load("oauth2", "https://content.googleapis.com/discovery/v1/apis/calendar/v3/rest")
-      .then(function () { console.log("GAPI client loaded for API"); },
-        function (err) { console.error("Error loading GAPI client for API", err); });
-  }
+  // loadClient() {
+  //   gapi.client.setApiKey("AIzaSyCvdcM66qxdlRIAKGhB1VotyUW9qKzMIBU");
+  //   return gapi.client.load("oauth2", "https://content.googleapis.com/discovery/v1/apis/calendar/v3/rest")
+  //     .then(function () { console.log("GAPI client loaded for API"); },
+  //       function (err: any) { console.error("Error loading GAPI client for API", err); });
+  // }
 
-  loadCalendarApi() {
-    var loadCalender = gapi.client.load('calendar', 'v3', this.execute);
-    console.log(loadCalender)
-  }
+  // loadCalendarApi() {
+  //   var loadCalender = gapi.client.load('calendar', 'v3', this.execute);
+  //   console.log(loadCalender)
+  // }
 
   execute() {
     var event = {
@@ -598,14 +619,14 @@ export class AppComponent implements OnInit, OnChanges {
         ]
       }
     };
-    var request = gapi.client.calendar.events.insert({
-      'calendarId': 'primary',
-      'resource': event
-    }).then(function (response) {
-      // appendPre("Event created: " + response.result.htmlLink);
-      console.log(response);
-    });
-    console.log(request)
+    // var request = gapi.client.calendar.events.insert({
+    //   'calendarId': 'primary',
+    //   'resource': event
+    // }).then(function (response: any) {
+    //   // appendPre("Event created: " + response.result.htmlLink);
+    //   console.log(response);
+    // });
+    // console.log(request)
 
   }
 
@@ -733,7 +754,7 @@ export class AppComponent implements OnInit, OnChanges {
   //   this._swiper?.addSlide(data+1, `<app-card (isExpand)="addItem($event)" [courseModel]="datValuedata[0]" class="appCardContainer"
   //   (isCollapse)=collapseItem($event)>
   // </app-card>` );
-    this.courses.splice(indexData + 1, 0, ...this.datValuedata[0])
+    this.courses.splice(indexData + 1, 0, ...this.datValuedata)
 
     let editedCourse = []
     editedCourse = this.courses.slice(0, indexData)
@@ -758,14 +779,54 @@ export class AppComponent implements OnInit, OnChanges {
     console.log('slide change');
   }
 
+  async onClickModal(){    
+     const noticationValue = await this.modalService.createPopup({
+        backdropDismiss:true,
+        cssClass: 'popup-modal-css',
+        componentProps: {
+          header: "Set Disclosures Label and Data Points",
+          Component: NotificationPopupComponent
+        }
+      })
+
+    noticationValue.onDidDismiss().then((response) => {
+      console.log(response)
+      if (response?.data === "modified") {
+        // this.iFetchCategories();
+        console.log(response)
+      }
+    });
+    }
+
+
+    async reviewPopup(){
+      const reviewValue = await this.modalService.createPopup({
+        backdropDismiss:true,
+        cssClass: 'popup-modal-css',
+        componentProps: {
+          header: "Rate And Review",
+          Component: ReviewPopupComponent
+        }
+      })
+      reviewValue.onDidDismiss().then((response) => {
+        console.log(response)
+        if (response?.data === "modified") {
+          // this.iFetchCategories();
+          console.log(response)
+        }
+      });
+    }
+
+    async mandatoryPopup(){
+      const mandatoryValue = await this.modalService.createPopup({
+        backdropDismiss:true,
+        cssClass: 'popup-modal-css-admin',
+        componentProps: {
+          header: "Set mandatory training label and Data points",
+          Component: ViewModalPopupComponent
+        }
+      })
+    }
 }
 
-
-// function slidePrev() {
-//   throw new Error('Function not implemented.');
-// }
-
-// function slidePrev() {
-//   throw new Error('Function not implemented.');
-// }
 
