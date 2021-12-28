@@ -169,7 +169,7 @@ export class ViewModalPopupComponent implements OnInit {
 
   defaultLanguage = "Language";
 
-  constructor(private modalController: ModalController,
+  constructor(
     private modalService: ModalService,
     private languageService: LanguageService
     // public translateService:TranslateService
@@ -182,6 +182,7 @@ export class ViewModalPopupComponent implements OnInit {
 
   segmentChanged(eve: any) {
     this.segment = eve.detail.value;
+    console.log(this.segment)
   }
 
   cancel() {

@@ -1,49 +1,64 @@
-<div>
-    <div>
-        <ion-text>Select upto 4 data points that your employees can sort by.</ion-text><br>
-        <ion-text>TIP:To Select a new data point, please uncheck any selected</ion-text>
+<div class="main-block">
+    <div class="main-block-text">
+        <div style="margin-bottom:20px ;">
+            <ion-label tabindex="0" alt="text" class="text-field">Select upto 4 data points that your employees can sort by.</ion-label>
+        </div>
+        <div >
+            <ion-text tabindex="0" alt="text" class="text-field">TIP:To Select a new data point, please uncheck any selected</ion-text>
+        </div>
     </div>
-    <!-- <ul>
-        <li>Disclosures</li>
-        <li>Pending Completion</li>
-        <li>Information Requested</li>
-        <li>Submitted</li>
-        <li>Total Mandatory</li>
-        <li>Not Completed</li>
-        <li>Pending Review</li>
-    </ul> -->
-    <ion-card class="content">
+    <div class="content">
         <ion-grid>
             <ion-row>
                 <ion-col>
-                    <ul *ngFor="let dat of data; let i = index">
-                        <li class="list">
-                            <input type="checkbox" id="remember" 
-                            [disabled]="!dat.value && checkedNumber === limitNumber" 
-                            (change)="onChange($event,dat.id)" 
-                            [checked]="dat.isChecked"
-                            [(ngModel)]="dat.value">
-                            <ion-text class="bread-scrum">{{ dat.name }}</ion-text>
+                    <ul *ngFor="let dat of inputValue; let i = index" class="ul-main">
+                        <li class="list col-check-block">
+                            <ion-checkbox type="checkbox" id="remember" tabindex="0" alt="checkbox" value="on"
+                            [disabled]="!dat.value && checkedNumber === limitNumber"  (click)="onChange($event)"
+                            [checked]="dat.isChecked" [(ngModel)]="dat.value">
+                            </ion-checkbox>
+                          
+                            <!-- <input type="checkbox" id="remember" tabindex="0" alt="checkbox" value="on"
+                                [disabled]="!dat.value && checkedNumber === limitNumber" (change)="onChange($event)"
+                                [checked]="dat.isChecked" [(ngModel)]="dat.value"> -->
+                            <ion-text class="bread-scrum check-box-text-color">{{ dat.name }}</ion-text>
                         </li>
                     </ul>
-                    
                 </ion-col>
             </ion-row>
         </ion-grid>
-    </ion-card>
-   
+    </div>
+    <ion-footer no-border>
+    <div class="footer-height">
+    <ion-grid>
+        <ion-row class="row-alignment">
+            <ion-col size-xs="0" size-sm="0" size-md="0" size-lg="2.2"></ion-col>
+            <ion-col  size-xs="3.5" size-sm="3.5" size-md="2.5" size-lg="2.5">
+                <button ion-button icon-only class="cancel-button common-btn" tabindex="0" role="button" alt="button">
+                    <span class="material-icons-outlined close-icon">close</span>
+                    <label  (click)="cancelFunc()">Cancel</label>
+                </button>
+            </ion-col>
+            <ion-col size-xs="3.5" size-sm="3.5" size-md="2.5" size-lg="2.5">
+                <button ion-button icon-only class="reset-button common-btn" tabindex="0" role="button" alt="button">
+                    <span class="material-icons-outlined reset-icon">replay</span>
+                    <label class="reset-text" (click)="initializeScreen()">Reset</label>
+                </button>
+            </ion-col>
+            <ion-col size-xs="3.5" size-sm="3.5" size-md="2.5" size-lg="2.5">
+                <button ion-button icon-only class="save-button common-btn" tabindex="0" role="button" alt="button">
+                    <label class=""  (click)="saveFunc()">Save</label>
+                    <span class="material-icons-outlined ">save</span>
+                </button>
+            </ion-col>
+            <ion-col size-xs="0" size-sm="0" size-md="0" size-lg="2.2"></ion-col>
+        </ion-row>
+    </ion-grid>
 </div>
+</ion-footer>
 
-<div class="footer-height">
-    <ion-footer class="button-container">
-        <ion-grid>
-            <ion-row class="row-alignment">
-                <ion-col size="1.5"></ion-col>
-                <ion-col size="3" (click)="cancelFunc()">Cancel</ion-col>
-                <ion-col size="3" (click)="resetFunc()">Reset</ion-col>
-                <ion-col size="3" (click)="saveFunc()">Save</ion-col>
-                <ion-col size="1.5"></ion-col>
-            </ion-row>
-        </ion-grid>
-    </ion-footer>
 </div>
+<!-- size-xs="12" size-sm="12" size-md="5" size-lg="5" -->
+    <!-- <ion-footer class="button-container"> -->
+        
+    <!-- </ion-footer> -->

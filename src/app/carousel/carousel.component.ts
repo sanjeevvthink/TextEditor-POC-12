@@ -39,7 +39,7 @@ export class CarouselComponent implements OnInit, OnDestroy, AfterViewInit {
 
 
     if (swiperCarousels.length) {
-      swiperCarousels.forEach((carouselContainer: any) => {
+      await swiperCarousels.forEach((carouselContainer: any) => {
 
         const carouselPrevButton =
           carouselContainer.querySelector(".prev") ||
@@ -53,7 +53,7 @@ export class CarouselComponent implements OnInit, OnDestroy, AfterViewInit {
             ".next"
           );
 
-        const swiperInstance = new Swiper(carouselContainer, {
+        const swiperInstance = new Swiper(".swiper-container", {
           setWrapperSize: true,
           scrollbar: false,
           observer: true,
@@ -66,8 +66,8 @@ export class CarouselComponent implements OnInit, OnDestroy, AfterViewInit {
           loop: true,
           effect: 'coverflow',
           grabCursor: true,
-          slidesPerView: 4,
-          slidesPerGroup: 4,
+          slidesPerView: 3,
+          slidesPerGroup: 3,
           initialSlide: 0,
           coverflowEffect: {
             rotate: 50,
@@ -78,18 +78,18 @@ export class CarouselComponent implements OnInit, OnDestroy, AfterViewInit {
           },
           // allowSlidePrev: numberOfSlides === 3 ? false : true,
           // allowSlideNext: numberOfSlides === 1 ? false : true,
-          // pagination: {
-          //       el: `${pg.className}`,
-          //       clickable: true,
-          //     },
+          pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+              },
           navigation: {
-            nextEl: carouselNextButton,
-            prevEl: carouselPrevButton,
+            nextEl: ".next",
+            prevEl: ".prev",
             disabledClass: 'disabled_swiper_button'
           },
           breakpoints: {
             1200: {
-              slidesPerView: 4,
+              slidesPerView: 3,
               // loopedSlides: 4,
               // spaceBetween: 10
             },
@@ -118,6 +118,7 @@ export class CarouselComponent implements OnInit, OnDestroy, AfterViewInit {
             }
           }
         });
+        // swiperInstance.loopCreate()
         function checkArrow() {
           var numberOfChild = numberOfWrapers.forEach((dat: any) => {
             let slideLength

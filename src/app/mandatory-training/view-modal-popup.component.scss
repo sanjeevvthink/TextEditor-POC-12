@@ -80,23 +80,34 @@ ion-content {
 .seg-texting {
   text-transform: capitalize;
   font-size: var(--app-heading2-font-size);
-  color: red;
+}
+segment-button-indicator-background {
+  background: -webkit-linear-gradient(left, #162E5C , #0061A4 , #00A59C) !important; /*For Safari 5.1 to 6.0 */
+  background: linear-gradient(0.25turn, #162E5C, #0061A4, #00A59C) !important;
 }
 .segment-button-checked{
-  border: red !important;
+  // border: red !important;
+  color: #162E5C;
 
 }
 .seg-texting:active {
-  background: blue;
-  color: red;
+  // background: blue;
+  // color: red;
   font-family: var(--app-semi-bold-font) !important;
   font-weight: 400;
 }
 .seg-texting:hover {
-  background: rgba(var(--app-primary-color-rgb), 0.1);
-  color: var(--app-primary-color) !important;
+  background: -webkit-linear-gradient(left, #162E5C , #0061A4 , #00A59C) !important; /*For Safari 5.1 to 6.0 */
+  background: linear-gradient(0.25turn, #162E5C, #0061A4, #00A59C) !important;
+  // background: rgba(var(--app-primary-color-rgb), 0.1);
+  // color: var(--app-primary-color) !important;
 }
-
+.text-font-segment{
+  font-size: 16px;
+  text-align: center;
+  display: flex;
+  font-weight: bold;
+}
 .close-btn {
   width: 22px;
   height: 22px;
@@ -195,14 +206,14 @@ ion-segment {
   bottom: 0;
 }
 .footer-height{
-  position: absolute;
-  height: 75px;
-  width: 100%;
-  bottom: 0;
+  // position: absolute;
+  // height: 75px;
+  // width: 100%;
+  // bottom: 0;
 }
 
 .button-container{
-  position: absolute;
+  // position: absolute;
   bottom: 0;
   width: 100%;
 }
@@ -216,8 +227,8 @@ ion-segment {
 }
 
 .text-font{
-    color: lightslategray;
-    font-size: 14px;
+    font-size: 16px;
+    color: #5F6A6A;
     text-align: center;
     display: flex;
 }
@@ -234,17 +245,23 @@ ion-segment {
 }
 
 .hr-line{
-  width: 500px;
-  border-width: 1px;
-  color: gray;
-  height: 0px;
+  width: 90%;
+  border-width: 0px;
+  background-color: #5F6A6A;
+  height: 1px;
   display: flex;
   align-items: center;
 }
+hr {
+  margin-top: 0rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0,0,0,.1);
+}
 
 .text-font-career{
-    color: lightslategray;
-    font-size: 14px;
+    font-size: 16px;
+    color: #5F6A6A;
 }
 
 .text-font-balck{
@@ -257,20 +274,27 @@ ion-toggle[aria-checked="false"]{
   position: relative;
   width: 70px;
   height: 30px;
+  // --background: #5F6A6A;
+  --handle-spacing: 4px;
  &::before {
    position: absolute;
-   content: "OFF";
-   font-size: 16px;
-   line-height: 31px;
-   left: 35px;
-   float: right;
+    content: "OFF";
+    font-size: 16px;
+    line-height: 31px;
+    float: right;
+    right: 20px;
+
  }
  &::after {
    position: absolute;
    content: "";
  }
 }
+
 ion-toggle[aria-checked="true"]{
+  --background-checked: #00A59C;
+  --handle-background-checked: #ffffff;
+  --handle-spacing: 4px;
  position: relative;
  width: 70px;
  height: 30px;
@@ -280,26 +304,35 @@ ion-toggle[aria-checked="true"]{
  }
 &::after {
   position: absolute;
-  content: "ON";
-  font-size: 16px;
-  line-height: 31px;
-  float: left;
-  top: 10px;
-  left: 15px;
-  color: #fff;
+    content: "ON";
+    font-size: 17px;
+    line-height: 34px;
+    float: left;
+    top: 10px;
+    left: 17px;
+    color: #fff;
 }
 }
 
-ion-col{
-  ion-input{
-    border: solid 1px gray;
-    color: black;
-    font-size: 14px;
-    padding-left: 5px;
-    background-color: lightgrey;
-    padding: 5px !important;
-  }
+ion-input{
+      padding-left: 8px;
+      padding: 5px !important;
+    }
+
+.segment-button-indicator-background{
+  background: linear-gradient(0.25turn, #162E5C, #0061A4, #00A59C) !important;
+  background: -webkit-linear-gradient(left, #162E5C , #0061A4 , #00A59C) !important; /*For Safari 5.1 to 6.0 */
 }
+// ion-col{
+//   ion-input{
+//     border: solid 1px gray;
+//     color: black;
+//     font-size: 14px;
+//     padding-left: 5px;
+//     background-color: lightgrey;
+//     padding: 5px !important;
+//   }
+// }
 
 // &::part(indicator) {
 //   height: 100%;
@@ -341,7 +374,9 @@ ion-checkbox {
 }
 
 .input-box{
-  height: 35px;
+  height: 45px;
+  border: 1px solid #879797;
+  background-color: #F3F5F5;  
 }
 ::part(content) {
     /* Styles to apply to the foo part */
@@ -351,8 +386,11 @@ ion-checkbox {
 ::part(indicator) {
   height: 45px;
   width: 150px;
-  --indicator-color: red;
-  // background: linear-gradient(to right, 162ec5,0061a4,00a56c);
+  --indicator-color: -webkit-linear-gradient(left, #162E5C , #0061A4 , #00A59C) !important; /*For Safari 5.1 to 6.0 */;
+  --indicator-height: 4px;
+  --color-checked: #162E5C;
+  --color-checked: var(--ion-color-primary, #162E5C);
+  --background-hover: #162E5C;
   display: flex;
   margin: auto;
 }
@@ -360,3 +398,87 @@ ion-checkbox {
 // ::part(indicator-background) {
 //   height: 3px;
 // }
+
+
+
+// changes code css sanjeev
+.text-field{
+  font-size: 16px;
+  color: #5F6A6A;
+}
+
+
+/** Button CSS */
+.row-alignment{
+  padding: 0px;
+  // padding-top: 40px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+.common-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+}
+.cancel-button{
+  width: 100%;
+  height: 48px;
+  background-color: #F2FBFA;
+  box-shadow: 1px 2px 7px 1px rgba(27, 36, 43, 0.25);
+  border-radius: 2px;
+  color: #5F6A6A;
+  font-family: Proxima-Nova;
+  font-size: 16px;
+  letter-spacing: 0.08em;
+}
+
+.reset-button{
+  width: 100%;
+  height: 48px;
+  border: 2px solid #00A59C;
+  box-shadow: 1px 1px 0px rgba(27, 36, 43, 0.25);
+  border-radius: 2px;
+  background: #FFFFFF;
+  letter-spacing: 0.08em;
+  color: #00A59C;
+  font-family: Proxima-Nova;
+  font-size: 16px;
+}
+.save-button{
+  width: 100%;
+  height: 48px;
+  border: 2px solid #00A59C;
+  box-shadow: 1px 1px 0px rgba(27, 36, 43, 0.25);
+  border-radius: 2px;
+  background: #00A59C;
+  font-family: Proxima-Nova;
+  font-size: 16px;
+  letter-spacing: 0.08em;
+  color: #FFFFFF;
+}
+label{
+  padding: 5px;
+  margin-bottom: 0rem !important;
+}
+.label-txt{
+  font-size: 16px;
+  color: #5F6A6A;
+}
+
+.col-check-block{
+  display: flex;
+  align-items: center;
+}
+
+ion-checkbox {
+  --border-color: var(--ion-color-primary, #5F6A6A);
+  --size: 18px;
+  --border-color-checked: var(--ion-color-primary, #0061A4);
+  --background-checked: var(--ion-color-primary, #ffffff);
+  --checkmark-width: 5px !important;
+  --checkmark-color: var(--ion-color-primary-contrast, #0061A4);
+}

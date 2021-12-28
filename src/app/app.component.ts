@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, VERSION , NgZone} from '@angular/core';
+import { Component, Input, OnChanges, OnInit, VERSION, NgZone } from '@angular/core';
 import { appInitialize } from '@ionic/angular/app-initialize';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
 import { QuillModule } from 'ngx-quill'
@@ -104,7 +104,7 @@ export class AppComponent implements OnInit, OnChanges {
       time: "~45 Mins",
       due: "Past due 23 Sep 2021"
     },
-    
+
   ]
   datValuedata: any
   linkedValue: any = []
@@ -358,7 +358,7 @@ export class AppComponent implements OnInit, OnChanges {
 
 
   constructor(private data: CRUDoperationService, private modalService: ModalService) {
-    
+
 
     //   var swiper = new Swiper('.container-fluid', {
     //     slidesPerView: 3,
@@ -413,6 +413,19 @@ export class AppComponent implements OnInit, OnChanges {
   }
   async ngOnInit() {
 
+    let height = screen.height;
+    console.log(height);
+    var width = window.innerWidth
+      || document.documentElement.clientWidth
+      || document.body.clientWidth;
+
+    var height1 = window.innerHeight
+      || document.documentElement.clientHeight
+      || document.body.clientHeight;
+      var height2 = document.body;
+      console.log(height2);
+      console.log(height1);
+
 
     // const swiper = await new Swiper('.swiper-container ', {
     //   observer: true,
@@ -440,7 +453,7 @@ export class AppComponent implements OnInit, OnChanges {
     //     el: '.swiper-pagination',
     //     clickable: true,
     //   },
-      
+
     // });
     // swiper.loopCreate();
     // swiper.loopDestroy()
@@ -740,7 +753,7 @@ export class AppComponent implements OnInit, OnChanges {
 
   addItem(data: any) {
 
-  
+
     var indexData = this.courses.findIndex(dat => {
       return dat.key == data
     })
@@ -751,9 +764,9 @@ export class AppComponent implements OnInit, OnChanges {
         this.datValuedata = dat.linked
       }
     })
-  //   this._swiper?.addSlide(data+1, `<app-card (isExpand)="addItem($event)" [courseModel]="datValuedata[0]" class="appCardContainer"
-  //   (isCollapse)=collapseItem($event)>
-  // </app-card>` );
+    //   this._swiper?.addSlide(data+1, `<app-card (isExpand)="addItem($event)" [courseModel]="datValuedata[0]" class="appCardContainer"
+    //   (isCollapse)=collapseItem($event)>
+    // </app-card>` );
     this.courses.splice(indexData + 1, 0, ...this.datValuedata)
 
     let editedCourse = []
@@ -779,15 +792,15 @@ export class AppComponent implements OnInit, OnChanges {
     console.log('slide change');
   }
 
-  async onClickModal(){    
-     const noticationValue = await this.modalService.createPopup({
-        backdropDismiss:true,
-        cssClass: 'popup-modal-css',
-        componentProps: {
-          header: "Set Disclosures Label and Data Points",
-          Component: NotificationPopupComponent
-        }
-      })
+  async onClickModal() {
+    const noticationValue = await this.modalService.createPopup({
+      backdropDismiss: true,
+      cssClass: 'popup-modal-css-notification',
+      componentProps: {
+        header: "Set Disclosures Label and Data Points",
+        Component: NotificationPopupComponent
+      }
+    })
 
     noticationValue.onDidDismiss().then((response) => {
       console.log(response)
@@ -796,37 +809,37 @@ export class AppComponent implements OnInit, OnChanges {
         console.log(response)
       }
     });
-    }
+  }
 
 
-    async reviewPopup(){
-      const reviewValue = await this.modalService.createPopup({
-        backdropDismiss:true,
-        cssClass: 'popup-modal-css',
-        componentProps: {
-          header: "Rate And Review",
-          Component: ReviewPopupComponent
-        }
-      })
-      reviewValue.onDidDismiss().then((response) => {
+  async reviewPopup() {
+    const reviewValue = await this.modalService.createPopup({
+      backdropDismiss: true,
+      cssClass: 'popup-modal-css-review ',
+      componentProps: {
+        header: "Rate And Review",
+        Component: ReviewPopupComponent
+      }
+    })
+    reviewValue.onDidDismiss().then((response) => {
+      console.log(response)
+      if (response?.data === "modified") {
+        // this.iFetchCategories();
         console.log(response)
-        if (response?.data === "modified") {
-          // this.iFetchCategories();
-          console.log(response)
-        }
-      });
-    }
+      }
+    });
+  }
 
-    async mandatoryPopup(){
-      const mandatoryValue = await this.modalService.createPopup({
-        backdropDismiss:true,
-        cssClass: 'popup-modal-css-admin',
-        componentProps: {
-          header: "Set mandatory training label and Data points",
-          Component: ViewModalPopupComponent
-        }
-      })
-    }
+  async mandatoryPopup() {
+    const mandatoryValue = await this.modalService.createPopup({
+      backdropDismiss: true,
+      cssClass: 'popup-modal-css-admin',
+      componentProps: {
+        header: "Set mandatory training label and Data points",
+        Component: ViewModalPopupComponent
+      }
+    })
+  }
 }
 
 

@@ -1,21 +1,8 @@
-// :host {
-//     overflow-y: auto;
-//     height: 100%;
-//     width: 100%;
-//     background-color: black;
-//     font-weight: 400;
-//   }
-//   ::ng-deep app-no-data .center-screen {
-//     margin-top: 30px;
-//     min-height: 10px !important;
-//   }
+
   .main-container{
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  .label-text{
-    font-size: 17px;
   }
   .col-label-main{
     text-align: center;
@@ -46,4 +33,66 @@
 }
 .row-button-main{
   padding-top: 80px;
+}
+
+.text-field{
+  font-size: 16px;
+  color: #5F6A6A;
+}
+.row-alignment{
+  padding: 0px;
+  padding-top: 40px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+/** Button CSS */
+.common-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+}
+.cancel-button{
+  width: 100%;
+  height: 48px;
+  background-color: #F2FBFA;
+  box-shadow: 1px 2px 7px 1px rgba(27, 36, 43, 0.25);
+  border-radius: 2px;
+  color: #5F6A6A;
+  font-family: Proxima-Nova;
+  font-size: 16px;
+  letter-spacing: 0.08em;
+}
+
+.reset-button{
+  width: 100%;
+  height: 48px;
+  border: 2px solid #00A59C;
+  box-shadow: 1px 1px 0px rgba(27, 36, 43, 0.25);
+  border-radius: 2px;
+  background: #FFFFFF;
+  letter-spacing: 0.08em;
+  color: #00A59C;
+  font-family: Proxima-Nova;
+  font-size: 16px;
+}
+.save-button{
+  width: 100%;
+  height: 48px;
+  border: 2px solid #00A59C;
+  box-shadow: 1px 1px 0px rgba(27, 36, 43, 0.25);
+  border-radius: 2px;
+  background: #00A59C;
+  font-family: Proxima-Nova;
+  font-size: 16px;
+  letter-spacing: 0.08em;
+  color: #FFFFFF;
+}
+label{
+  padding: 5px;
+  margin-bottom: 0rem !important;
 }

@@ -1,43 +1,49 @@
 <div main-component-container>
+    <hr class="hr-tag"/>
     <div class="main-content-label">
-        <ion-label class="label-main">{{title}}</ion-label>
+        <ion-label class="label-main" tabindex="0" role="text">{{title}}</ion-label>
     </div>
-    <ion-grid fixed>
+    <ion-grid>
         <ion-row>
-            <ion-col size="2"></ion-col>
-            <ion-col size="2" (click)="onClick('dissatisfied')" class="col-main-img">
-                <ion-img [src]="'assets/verydissatisfied.svg'" class="img"></ion-img>
+            <ion-col size="3"></ion-col>
+            <ion-col size="1.5" (click)="onClick('dissatisfied')" class="col-main-img1 "
+                [ngStyle]="{'transform':image1 ? 'scale(1.4, 1.4)' : 'none'}">
+                <!-- <img [src]="'assets/verydissatisfied.svg'" label="verydissatisfied" tabindex="0" class="img-large"
+                    alt="verydissatisfied" role="button" id="imgage1pop" /> -->
+                    <span class="material-icons-outlined img1" id="imgage1pop">sentiment_very_dissatisfied</span>
             </ion-col>
-            <ion-col size="2" (click)="onClick('okey')" class="col-main-img">
-                <ion-img [src]="'assets/dissatisfied.svg'" class="img"></ion-img>
+            <ion-col size="1.5" (click)="onClick('okey')" class="col-main-img"
+                [ngStyle]="{'transform':image2 ? 'scale(1.7, 1.7)' : 'none'}">
+                <img [src]="'assets/dissatisfied.svg'" class="img" tabindex="0" alt="dissatisfied" role="button"
+                    id="imgage2pop" />
             </ion-col>
-            <ion-col size="2" (click)="onClick('satisfied')" class="col-main-img">
-                <ion-img [src]="'assets/okey.svg'" class="img"></ion-img>
+            <ion-col size="1.5" (click)="onClick('satisfied')" class="col-main-img"
+                [ngStyle]="{'transform':image3 ? 'scale(1.7, 1.7)' : 'none'}">
+                <img [src]="'assets/okey.svg'" class="img" tabindex="0" alt="satisfied" role="button" id="imgage3pop" />
             </ion-col>
-            <ion-col size="2" (click)="onClick('veryhappy')" class="col-main-img">
-                <ion-img [src]="'assets/verysatisfied.svg'" class="img"></ion-img>
+            <ion-col size="1.5" (click)="onClick('veryhappy')" class="col-main-img4"
+                [ngStyle]="{'transform':image4 ? 'scale(1.4, 1.4)' : 'none'}">
+                <!-- <img [src]="'assets/verysatisfied.svg'" class="img" tabindex="0" alt="veryhappy" role="button"
+                    id="imgage4pop" /> -->
+                    <span class="material-icons-outlined img" id="imgage4pop">mood</span>
             </ion-col>
-            <ion-col size="2"></ion-col>
+            <ion-col size="3"></ion-col>
         </ion-row>
     </ion-grid>
     <div class="main-text-area">
-        <textarea 
-        type="text" 
-        [placeholder]="placeHolder"
-         class="input-box" 
-         [(ngModel)]="inputValue"
-         maxlength = "150">
-       </textarea>
+        <textarea type="text" [placeholder]="placeHolder" class="input-box" [(ngModel)]="inputValue" maxlength="125"></textarea>
     </div>
     <ion-grid class="main-button-box">
         <ion-row>
             <ion-col size="6">
-                <ion-col size="6" (click)="cancelFunc()">Cancel</ion-col>
+                <button ion-button icon-only class="cancel-button" tabindex="0" role="button" alt="button">
+                    <label class="btn-font" size="6" (click)="cancelFunc()">Cancel</label>
+                </button>
             </ion-col>
             <ion-col size="6">
-                <button ion-button icon-only >
-                    <!-- <ion-img  [src]="'assets/notification.svg'" class="next"></ion-img> -->
-                    <ion-col size="6" (click)="saveFunc()">Save</ion-col>
+                <button ion-button icon-only class="save-button" tabindex="0" role="button" alt="button">
+                    <label class="btn-font" size="6" (click)="saveFunc()">Submit</label>
+                    <ion-img [src]="'assets/rightarrow-w.svg'" class="save-img"></ion-img>
                 </button>
             </ion-col>
         </ion-row>

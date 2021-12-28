@@ -7,7 +7,9 @@
 @import 'swiper/scss/navigation';
 @import 'swiper/scss/pagination';
 
-  
+
+
+// assets/ProximaNovaFont.otf
   /* Set dropdown font-families */
   #toolbar-container .ql-font span[data-label="Aref Ruqaa"]::before {
     font-family: "Aref Ruqaa";
@@ -72,31 +74,97 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    ion-backdrop {
+      --backdrop-opacity: 0.80;
+    }
   }
-  
-  .popup-modal-css-admin {
+  .popup-modal-css-notification{
     height: 100%;
     width: 100%;
-    color: var(--app-secondary-color);
+    color: black;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    ion-backdrop {
+      --backdrop-opacity: 0.80;
+    }
+  }
+  .popup-modal-css-notification .modal-wrapper{
+    height: 456px !important;
+    min-height: 456px;
+    max-height: 900px;
+    width: 570px;
+    margin: 20px;
+  }
+   
+  .popup-modal-css-review {
+    height: 100%;
+    width: 100%;
+    color: black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    ion-backdrop {
+      --backdrop-opacity: 0.80;
+    }
+  }
+  .popup-modal-css-review .modal-wrapper{
+    display: grid;
+    grid-template-columns: auto;
+    grid-auto-rows: minmax(min-content, max-content);
+    margin: 20px;
+
+    height: 456px !important;
+    min-height: 456px;
+    max-height: 900px;
+    width: 570px;
+  }
+  .popup-modal-css-mandatory {
+    height: 100%;
+    width: 100%;
+    color: black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    ion-backdrop {
+      --backdrop-opacity: 0.80;
+    }
+  }
+  .popup-modal-css-mandatory .modal-wrapper{
+    height: 500px !important;
+    min-height: 600px;
+    max-height: 1000px;
+    width: 700px !important;
+    margin: 20px;
+  }
+
+  
+  .popup-modal-css-admin {
+    height: 1483px;
+    width: 100%;
+    color: var(--app-secondary-color);
+    top: 87%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    ion-backdrop {
+      --backdrop-opacity: 0.80;
+    }
   }
   
   .popup-modal-css-admin .modal-wrapper {
     display: grid;
     grid-template-columns: auto;
     grid-auto-rows: minmax(min-content, max-content);
-    height: 200% !important;
-    min-height: 530px;
-    max-height: 900px !important;
-    width: 550px;
+    height: 99% !important;
+    min-height: 600px;
+    max-height: 1080px !important;
+    width: 650px;
     margin: 20px;
   }
 
   ::part(content) {
     height: 100%;
-    max-height: 800px;
+    max-height: 1500px;
     min-height: 500px;
     overflow: auto;
 }

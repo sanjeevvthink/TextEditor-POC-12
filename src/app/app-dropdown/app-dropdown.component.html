@@ -18,9 +18,11 @@
         <ion-col size="2" class="image-col">
           <ion-label class="drop-down-img-container">
             <ion-spinner *ngIf="isLoading" name="crescent" class="loader"></ion-spinner>
-            <svg [ngClass]="showDropDown ? 'rotate-icon' : ''" role="img" viewBox="-8 0 80 42" *ngIf="!isLoading" class="collapse-dropdown">
+            <span class="material-icons-outlined">keyboard_arrow_down</span>
+            <!-- <svg [ngClass]="showDropDown ? 'rotate-icon' : ''" role="img" viewBox="-8 0 80 42" *ngIf="!isLoading" class="collapse-dropdown"> -->
+              
               <!-- <use xlink:href="/assets/icon/audit-sprite-icons.svg#collapse-dropdown"></use> -->
-            </svg>
+            <!-- </svg> -->
             <!-- <svg role="img" viewBox="-10 0 100 75" *ngIf="showDropDown" class="expand-dropdown">
               <use xlink:href="/assets/icon/audit-sprite-icons.svg#expand-dropdown"></use>
             </svg> -->

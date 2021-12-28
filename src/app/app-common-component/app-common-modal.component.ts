@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { zip } from 'rxjs';
 import { ModalService } from '../modal.service';
+import { model } from '../models/model';
 
 @Component({
   selector: 'app-app-common-modal',
@@ -8,54 +10,41 @@ import { ModalService } from '../modal.service';
 })
 export class AppCommonModalComponent implements OnInit {
 
-  @Input() data:any;
+  @Input()
+  data!: model[];
   limitNumber = 4
   checkedNumber: any = 0
-  changedData: any;
-  datas:any;
+  checkboxList: any = [];
+  inputValue: any = []
 
-  maxNo = false;
-
-  amt = 0;
-
-  checked:any
-
-  public maxElementCheckbox = 4;
-
-  checkboxList:any = [];
   constructor(private modalService: ModalService) {
   }
-  
+
   ngOnInit(): void {
-    console.log(this.data)
-    console.log(this.changedData)
-    // this.checkedBox();
+    this.initializeScreen();
   }
 
-  onChange(event:any, id:any){
-    if(event.target.checked){
-      this.checkboxList.push(id);
-    } 
-    if (event.target.checked) {
+  initializeScreen() {
+    this.inputValue = JSON.parse(JSON.stringify(this.data));
+    if (this.inputValue.length > 0) {
+      this.checkedNumber = this.inputValue.filter((x: any) => x.value === true)?.length;
+    }
+  }
+
+  onChange(event: any) {
+    if (!event.target.checked) {
       this.checkedNumber++;
     } else {
       this.checkedNumber--;
     }
   }
 
-  public disableCheckbox(){
-    return this.checkboxList.length >= this.maxElementCheckbox;
-    // return !this.dat.isChecked && (this.data.filter((x: any)=>(x.value == true)).length >= this.maxElementCheckbox)
-
-  }
-
-  resetFunc() {
-
-  }
   cancelFunc() {
     this.modalService.closePopup();
   }
+
   saveFunc() {
-    this.modalService.closePopup();
+    this.modalService.closePopup(this.inputValue);
   }
+
 }

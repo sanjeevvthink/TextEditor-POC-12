@@ -6,25 +6,20 @@ import { ModalService } from '../modal.service';
   templateUrl: './review-popup.component.html',
   styleUrls: ['./review-popup.component.scss']
 })
-export class ReviewPopupComponent implements OnInit {
+export class ReviewPopupComponent {
   @Output() reviewValue = new EventEmitter<any>();
 
-  placeHolder = "Tell us more (Please) what you love and how can we improve"
-  inputValue = ""
-  emotionData: string = ""
-  title = "How would you rate this fundamental course?"
-
-  emojObject = [
-    {emoj1 : "dissatisfied"},
-    {emoj2: "okey"},
-    {emoj3: "satisfied"},
-    {emoj4: "veryhappy"},
-  ]
+  placeHolder = "Tell us more (Please) what you love and how can we improve";
+  inputValue = "";
+  emotionData: string = "";
+  title = "How would you rate this fundamental course?";
+  clickedData: any;
+  image1: boolean = false;
+  image2: boolean = false;
+  image3: boolean = false;
+  image4: boolean = false;
 
   constructor(private modalService: ModalService) { }
-
-  ngOnInit(): void {
-  }
 
   cancelFunc() {
     this.modalService.closePopup();
@@ -32,18 +27,17 @@ export class ReviewPopupComponent implements OnInit {
 
   saveFunc() {
     const reviewData = {
-      emotion: "",
-      description: ""
+      emotion: this.emotionData,
+      description: this.inputValue
     }
-    reviewData.emotion = this.emotionData
-    reviewData.description = this.inputValue
-    console.log(reviewData)
-
     this.modalService.closePopup(reviewData);
   }
 
   onClick(data: any) {
-    this.emotionData = data
+      this.image1 =  (data === "dissatisfied");
+      this.image2 =  (data === "okey");
+      this.image3 =  (data === "satisfied");
+      this.image4 =  (data === "veryhappy");
   }
-
 }
+

@@ -3,7 +3,19 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 100%;
+    height: 100%; 
+}
+hr{
+    background: linear-gradient(0.25turn, #162E5C, #0061A4, #00A59C) !important;
+    margin-top: 6px !important;
+    margin-bottom: 8px !important;
+    background: -webkit-linear-gradient(left, #162E5C , #0061A4 , #00A59C); /*For Safari 5.1 to 6.0 */
+    margin-right: 45%;
+}
+.hr-tag{
+    height: 3px;
+    width: 15%;
+    background: linear-gradient(0.25turn, #162E5C, #0061A4, #00A59C) !important;
 }
 .main-content-label{
     display: flex;
@@ -21,11 +33,11 @@
     margin-top: 40px;
 }
 .input-box{
-    height: 130px;
+    height: 96px;
     width: 80%;
     margin: 0px;
-    border: 1px solid hsla(0, 3%, 46%, 0.975);
-    background-color: white, 0.015;   
+    border: 1px solid #879797;
+    background-color: #F3F5F5;   
     padding: 10px; 
     box-sizing: border-box;
     resize: none;
@@ -35,29 +47,97 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    margin-top: 40px;
+    margin-top: 5%;
 }
-.img{
+.imgage1pop{
     width: 36%;
 }
 .label-main{
     padding: 10px;
+    font-size: 16px;
+    color: #1B242B;
+}
+textarea {
+    border: none;
+    overflow: auto;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    resize: none; /*remove the resize handle on the bottom right*/
+}
+textarea::-webkit-input-placeholder {
+    color: #5F6A6A;
+    font-size: 14px;
+}
+img1{
+    color: red;
 }
 .col-main-img{
     display: flex;
     align-items: center;
     justify-content: center;
+    // transform: scale(1.2);
 }
-.buttonMain_Comp1{
-    width: 90%;
-    height: 30px;
-    background-color: var(--ion-text-color);
+
+.col-main-img :hover{
+    width: 20px;
+    transform: scale(1.5, 1.5);
+}
+.col-main-img4{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: darkgreen;
+}
+.col-main-img4 :hover{
+    width: 20px;
+    transform: scale(1.5, 1.5);
+}
+.col-main-img1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: red;
+}
+.col-main-img1 :hover{
+    width: 20px;
+    transform: scale(1.5, 1.5);
+}
+.save-button{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    background-color:white;
     border: none;
-    color: black;
+    color: white;
     box-shadow: 1px 2px 4px 1px rgba(0, 0, 0, 0.4);
+    width: 118px;
+    height: 48px;
+    border-radius: 2px;
+    background-color: #00A59C;
+    outline: none;
+    letter-spacing: 0.08em;
+}
+.cancel-button{
+    width: 88px;
+    height: 48px;
+    border-radius: 2px ;
+    border: 2px solid #00A59C;
+    box-shadow: 1px 2px 4px 1px rgba(0, 0, 0, 0.4);
+    color: #00A59C;
+    outline: none;
+    letter-spacing: 0.08em;
+}
+.save-img{
+    width: 21px;
+    // height: 26px;
+}
+.btn-font{
+    font-family: Proxima Nova;
+    font-size: 16px;
+}
+label{
+    padding: 5px;
+    margin-bottom: 0rem !important;
 }

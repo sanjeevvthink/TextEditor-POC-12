@@ -1,21 +1,21 @@
-import { Directive , ElementRef, HostListener} from '@angular/core';
+import { Directive, ElementRef, HostListener } from '@angular/core';
 
 @Directive({
   selector: '[appNextslide]'
 })
 export class NextslideDirective {
 
-  constructor(private el : ElementRef) {
+  constructor(private el: ElementRef) {
     console.log(this.el.nativeElement)
-   }
+  }
 
-   @HostListener('click')
-   nextFunc (){
+  @HostListener('click')
+  nextFunc() {
 
     var elm = this.el.nativeElement.parentElement
-  var item = elm.getElementsByClassName('slider-main')
-  console.log(elm)
-  elm.append(item[0])
+    var item = elm.getElementsByClassName('slider-main')
+    console.log(elm)
+    elm.append(item[0])
 
     // var elmf = this.el.nativeElement.parentElement.children
     // console.log(elmf)
@@ -24,5 +24,5 @@ export class NextslideDirective {
     //  console.log(item)
     //  console.log(elm)
     //  elm.append(item[0])
-   }
+  }
 }

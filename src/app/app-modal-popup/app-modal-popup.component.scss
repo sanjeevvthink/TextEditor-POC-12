@@ -1,16 +1,24 @@
-ion-toolbar.modal-header {
-  --background: var(--app-primary-color);
-  --color: var(--app-secondary-color);
+.popup-main-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-ion-toolbar.modal-footer {
-  --background: var(--app-quinary-color);
+.title-main{
+  text-align: center;
+  font-size: 24px;
+  color: #162E5C;
+  font: Proxima Nova;
+  width: 90%;
+  font-weight: 500;
 }
-
-.modal-title {
-  word-wrap: break-word;
-  width: 85%;
+.col-main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.header-title {
-  font-size: var(--app-heading1-font-size);
+.material-icons-outlined{
+  color: #5F6A6A;
+}
+.sc-ion-modal-md-h:first-of-type {
+  --backdrop-opacity: var(--ion-backdrop-opacity, 0.80);
 }

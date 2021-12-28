@@ -1,86 +1,90 @@
- <div class="container-content" name="fieldName" ngDefaultControl>
+<div class="container-content" ngDefaultControl>
     <ion-grid>
         <ion-row>
-            <ion-col>
-                <ion-text class="text-font">{{dummyData.content }}</ion-text>
+            <ion-col size="1"> </ion-col>
+            <ion-col size="10">
+                <ion-label class="text-font" tabindex="0" alt="text">{{dummyData.content }}</ion-label>
             </ion-col>
+            <ion-col size="1"> </ion-col>
         </ion-row>
         <ion-row>
             <ion-col class="column-adjust">
-                <app-dropdown 
-                            name="supportLanguages"
-                            [data]="supportLanguages"
-                            [placeholder]="defaultLanguage"
-                            displayBy="language"
-                            value="id"
-                            [(ngModel)]="dummyData.selectLanguages"
-                            (ngModelChange)="uiUpdateDefaultResponse($event)"
-                ></app-dropdown>
+                <app-dropdown name="supportLanguages" [data]="supportLanguages" [placeholder]="defaultLanguage"
+                    displayBy="language" value="id" [(ngModel)]="dummyData.selectLanguages"
+                    (ngModelChange)="uiUpdateDefaultResponse($event)"></app-dropdown>
             </ion-col>
         </ion-row>
         <ion-row>
+            <ion-col size="0.5"> </ion-col>
             <ion-col>
-                <ion-text class="text-font">{{dummyData.content1 }}</ion-text>
+                <ion-label size="11" class="text-font" tabindex="0" alt="label">{{dummyData.content1 }}</ion-label>
             </ion-col>
+            <ion-col size="0.5"> </ion-col>
         </ion-row>
         <ion-row>
-            <ion-col>
-                <ion-input class="input-box" [(ngModel)]="dummyData.content3"
-                ></ion-input>
+            <ion-col size="0.5"> </ion-col>
+            <ion-col size="11">
+                <ion-input class="input-box" [(ngModel)]="dummyData.content3"></ion-input>
             </ion-col>
+            <ion-col size="0.5"> </ion-col>
         </ion-row>
         <ion-row class="set-thumbnail">
+            <ion-col size="0.5"> </ion-col>
             <ion-col size="8">
-                <ion-label>{{dummyData.content4 }}</ion-label>
+                <ion-label class="label-txt" tabindex="0" alt="label">{{dummyData.content4 }}</ion-label>
             </ion-col>
-            <ion-col size="4">
-                <ion-toggle [(ngModel)]="dummyData.thumnailView"
-                [checked]="dummyData.thumnailView"></ion-toggle>
+            <ion-col size="3">
+                <ion-toggle tabindex="0" alt="toggle" value="on" [(ngModel)]="dummyData.thumnailView"
+                    [checked]="dummyData.thumnailView"></ion-toggle>
             </ion-col>
+            <ion-col size="0.5"> </ion-col>
         </ion-row>
-        <ion-row>
-            <ion-col size="12">
-                <hr class="hr-line">
-            </ion-col>
-        </ion-row>
+        <hr class="hr-line">
     </ion-grid>
 
     <ion-segment value="all" mode="md" ngDefaultControl (ionChange)="segmentChanged($event)">
-        <ion-segment-button ngDefaultControl value="file" class="seg-texting text-font" [(ngModel)]="dummyData.segment1" >{{dummyData.segment1 }}</ion-segment-button>
-        <ion-segment-button ngDefaultControl value="photo" class="seg-texting text-font" [(ngModel)]="dummyData.segment2" >
+        <ion-segment-button  value="thumnailView" class="seg-texting text-font-segment" 
+            [(ngModel)]="dummyData.segment1">{{dummyData.segment1 }}</ion-segment-button>
+        <ion-segment-button  value="tableView" class="seg-texting text-font-segment"
+            [(ngModel)]="dummyData.segment2">
             {{dummyData.segment2 }}
         </ion-segment-button>
     </ion-segment>
     <ion-grid>
         <ion-row>
-            <ion-col>
-                <ion-text class="text-font-career">
+            <ion-col size="0.5"> </ion-col>
+            <ion-col size="11">
+                <ion-text class="text-font-career" tabindex="0" alt="text">
                     {{dummyData.content5 }}
                 </ion-text>
             </ion-col>
+            <ion-col size="0.5"> </ion-col>
         </ion-row>
     </ion-grid>
     <div>
         <ion-grid *ngIf="segment === 'thumnailView'">
             <ion-row *ngFor="let data of dummyData.segmentData">
-                <ion-col>
+                <ion-col size="0.5"> </ion-col>
+                <ion-col size ="11" class="col-check-block">
                     <ion-checkbox ngDefaultControl [(ngModel)]="data.isChecked" [disabled]="data.default" ></ion-checkbox>
                     <ion-text class="segment-data">{{ data.name }}</ion-text>
                 </ion-col>
+                <ion-col size="0.5"> </ion-col>
             </ion-row>
         </ion-grid>
     </div>
-
     <div>
-        <ion-grid *ngIf="segment === 'tableView'">
+         <ion-grid *ngIf="segment === 'tableView'">
             <ion-row *ngFor="let data of dummyData.segmentDataTable">
-                <ion-col>
+                <ion-col size="0.5"> </ion-col>
+                <ion-col size ="11" class="col-check-block">
                     <ion-checkbox ngDefaultControl [(ngModel)]="data.isChecked" [disabled]="data.default" ></ion-checkbox>
                     <ion-text class="segment-data">{{ data.name }}</ion-text>
                 </ion-col>
+                <ion-col size="0.5"> </ion-col>
             </ion-row>
-        </ion-grid>
-    </div>
+        </ion-grid> 
+    </div> 
     <ion-grid>
         <ion-row>
             <ion-col size="12">
@@ -88,14 +92,16 @@
             </ion-col>
         </ion-row>
         <ion-row>
-            <ion-col size="9">
-                <ion-text class="text-font-balck">
+            <ion-col size="0.5"> </ion-col>
+            <ion-col size="8">
+                <ion-label class="label-txt">
                     {{dummyData.content6 }}
-                </ion-text>
+                </ion-label>
             </ion-col>
             <ion-col size="3">
-                <ion-toggle [(ngModel)]="dummyData.lastToggle" ></ion-toggle>
+                <ion-toggle [(ngModel)]="dummyData.lastToggle"></ion-toggle>
             </ion-col>
+            <ion-col size="0.5"> </ion-col>
         </ion-row>
         <ion-row>
             <ion-col size="12">
@@ -104,33 +110,46 @@
         </ion-row>
 
         <ion-row>
-            <ion-col>
+            <ion-col size="0.5"> </ion-col>
+            <ion-col size="1" class="col-check-block">
                 <ion-checkbox [(ngModel)]="dummyData.hideCheck"></ion-checkbox>
             </ion-col>
-            <ion-col>
-                <ion-text>Hide thumbnail view</ion-text>
+            <ion-col size="9">
+                <ion-label class="label-txt" tabindex="0" alt="text">Hide thumbnail view</ion-label>
             </ion-col>
+            <ion-col size="0.5"> </ion-col>
         </ion-row>
     </ion-grid>
-</div>
 
-
-<div class="footer-height">
-    <ion-footer class="button-container">
-        <ion-grid>
-            <ion-row class="row-alignment">
-                <ion-col size="1.5"></ion-col>
-                <ion-col size="3">
-                    <ion-button (click)="cancel()">Cancel</ion-button>
-                </ion-col>
-                <ion-col size="3">
-                    <ion-button (click)="reset()">Reset</ion-button>
-                </ion-col>
-                <ion-col size="3">
-                    <ion-button (click)="saveData()">Save</ion-button>
-                </ion-col>
-                <ion-col size="1.5"></ion-col>
-            </ion-row>
-        </ion-grid>
-    </ion-footer>
+    <div class="footer-height">
+        <ion-footer class="button-container">
+            <ion-grid>
+                <ion-row class="row-alignment">
+                    <ion-col size-xs="0" size-sm="0" size-md="0" size-lg="2.2"></ion-col>
+                    <ion-col size-xs="3.5" size-sm="3.5" size-md="2.5" size-lg="2.5">
+                        <button ion-button icon-only class="cancel-button common-btn" tabindex="0" role="button"
+                            alt="button">
+                            <span class="material-icons-outlined close-icon">close</span>
+                            <label (click)="cancel()">Cancel</label>
+                        </button>
+                    </ion-col>
+                    <ion-col size-xs="3.5" size-sm="3.5" size-md="2.5" size-lg="2.5">
+                        <button ion-button icon-only class="reset-button common-btn" tabindex="0" role="button"
+                            alt="button">
+                            <span class="material-icons-outlined reset-icon">replay</span>
+                            <label class="reset-text" (click)="reset()">Reset</label>
+                        </button>
+                    </ion-col>
+                    <ion-col size-xs="3.5" size-sm="3.5" size-md="2.5" size-lg="2.5">
+                        <button ion-button icon-only class="save-button common-btn" tabindex="0" role="button"
+                            alt="button">
+                            <label class="" (click)="saveData()">Save</label>
+                            <span class="material-icons-outlined ">save</span>
+                        </button>
+                    </ion-col>
+                    <ion-col size-xs="0" size-sm="0" size-md="0" size-lg="2.2"></ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-footer>
+    </div>
 </div>

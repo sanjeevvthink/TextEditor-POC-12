@@ -15,42 +15,42 @@ export class LrmMyqueueComponent implements OnInit {
       name:"Past Due",
       key:"Past Due",
       isChecked: false,
-      value: ""
+      value: false
     },
     {
       id:2,
       name:"Not Started",
       key:"Not Started",
       isChecked: false,
-      value: ""
+      value: true
     },
     {
       id:3,
       name:"In Progress",
       key:"In Progress",
       isChecked: false,
-      value: ""
+      value: true
     },
     {
       id:4,
       name:"Completed",
       key:"Completed",
       isChecked: false,
-      value: ""
+      value: false
     },
     {
       id:5,
       name:"Total Mandatory",
       key:"Total Mandatory",
       isChecked: false,
-      value: ""
+      value: false
     },
     {
       id:6,
       name:"Not Completed",
       key:"Not Completed",
       isChecked: false,
-      value: ""
+      value: false
     }
   ]
 
@@ -67,8 +67,9 @@ export class LrmMyqueueComponent implements OnInit {
   openModalPopup(event:any){
     this.modalService.createPopup({
       backdropDismiss:true,
+      cssClass: 'popup-modal-css-mandatory',
       componentProps:{
-        header:"Disclosures summary point data",
+        header:"My queue summary and data points",
         data:this.list,
         Component:AppCommonModalComponent
       }

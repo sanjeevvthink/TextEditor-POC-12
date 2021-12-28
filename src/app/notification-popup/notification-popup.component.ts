@@ -16,8 +16,8 @@ export class NotificationPopupComponent implements OnInit {
   label = "Language Name"
   placeLabel = "Places"
   selectLanguage = ""
-  changedData : any
-  changedValue : any
+  changedData: any
+  changedValue: any
   courseValue: any = []
   moduleValue: any = []
   storageContainer: any = []
@@ -77,28 +77,26 @@ export class NotificationPopupComponent implements OnInit {
     }
   ]
   constructor(private modalService: ModalService) {
-    this.getAllValues()
   }
 
   ngOnInit(): void {
+    this.getAllValues();
   }
+
   async getAllValues() {
     // this.courseValue.push(...this.language, ...this.places)
-    if (this.moduleValue == "") {
+    if (this.moduleValue.length === 0) {
       this.moduleValue.push(...this.datas)
     }
-    
+
     this.changedData = this.moduleValue[1]
-    // this.changedValue = this.language[1]
     this.changedValue = this.places[1]
 
-    if (this.courseValue == ""){
-      if(this.changedValue != ""){
-        console.log(this.changedValue)
-        var data = this.changedValue.key
-        if(data == "mod"){
+    if (this.courseValue.length > 0) {
+      if (this.changedValue != "") {
+        if (this.changedValue.key == "mod") {
           this.courseValue.push(...this.language)
-        }else {
+        } else {
           this.courseValue.push(...this.places)
         }
       }
@@ -107,34 +105,31 @@ export class NotificationPopupComponent implements OnInit {
   }
 
   uiGetFieldValues(data: any) {
-    console.log(this.changedData)
     if (data.id == 1) {
       this.courseValue = this.language;
       this.changedValue = ""
-      console.log(this.datas)
     } else if (data.id == 2) {
-      console.log(this.places)
       this.courseValue = this.places;
       this.changedValue = ""
     }
     this.storageContainer.push(data)
-    console.log(this.storageContainer)
   }
 
   uiGetPlaceValues(data: any) {
     this.storageContainer.push(data)
   }
+
   resetFunc() {
     this.courseValue = []
     this.getAllValues()
-
   }
+
   cancelFunc() {
     this.modalService.closePopup();
   }
+  
   saveFunc() {
-    this.modalService.closePopup(this.storageContainer);
-    // this.adminData.emit(this.storageContainer)
+    this.modalService.closePopup();
   }
 
 }
